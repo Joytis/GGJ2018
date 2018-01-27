@@ -6,7 +6,15 @@
 			"folder_exclude_patterns": [
 				"ProjectSettings",
 				"Library",
-				"UnityPackageManager"
+				"UnityPackageManager",
+				"Temp"
+			],
+			"file_exclude_patterns": [
+				"*.csproj",
+				"*.sln",
+				"*meta",
+				"*prefab"
+
 			]
 		}
 	]
