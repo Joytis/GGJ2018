@@ -219,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 1327349414784938}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: -5.12, y: 0.937, z: -12.3}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 4}
   m_Children:
   - {fileID: 4388989128390304}
   - {fileID: 4718952176413792}
@@ -260,7 +260,7 @@ Transform:
   m_GameObject: {fileID: 1834926937921342}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 5.04, y: 0.937, z: -12.3}
-  m_LocalScale: {x: 1, y: 1, z: 2}
+  m_LocalScale: {x: 2, y: 2, z: 4}
   m_Children:
   - {fileID: 4752761193979516}
   - {fileID: 4179318616597746}
@@ -314,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 1890883018819406}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -0.13, y: 1.94, z: 6.93}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 4143738642934888}
   - {fileID: 4628270835417508}
@@ -527,6 +527,11 @@ MonoBehaviour:
   thrust: 32
   turn: 2
   invert: 0
+  rearParticles:
+  - {fileID: 198022167015214330}
+  frontParticles:
+  - {fileID: 198024970492042730}
+  - {fileID: 198933188144834136}
 --- !u!198 &198022167015214330
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -537,9 +542,9 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -587,7 +592,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1917677125
+  randomSeed: -1064686490
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3868,9 +3873,9 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -3918,7 +3923,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 400009050
+  randomSeed: 732991766
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7199,9 +7204,9 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -7249,7 +7254,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2121968260
+  randomSeed: -1227179067
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10542,9 +10547,9 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -10592,7 +10597,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1649396514
+  randomSeed: -1389454849
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13885,9 +13890,9 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -13935,7 +13940,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1913636487
+  randomSeed: -2009674850
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17228,9 +17233,9 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -17278,7 +17283,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1605768330
+  randomSeed: 854794639
   InitialModule:
     serializedVersion: 3
     enabled: 1

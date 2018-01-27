@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     public float thrust;
     public float turn;
     public bool invert;
+    public ParticleSystem[] rearParticles;
+    public ParticleSystem[] frontParticles;
     bool _canBigThrust;
     float _maxTurn = 5f;
     float _rotation = 0f;
@@ -58,21 +60,25 @@ public class PlayerMovement : MonoBehaviour
             _canBigThrust = false;
             StopAllCoroutines();
             StartCoroutine(CoolDownForward());
+            if (invert) { PlayFrontParticles(); } else { PlayRearParticles(); }
         }
         else if (((Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow)) || (Input.GetKeyDown(KeyCode.S) && !Input.GetKey(KeyCode.W))) && _canBigThrust) {
             _direction = invert ? -transform.forward : transform.forward;
             _rigidBody.AddForce(_direction * thrust * 2f, ForceMode.Impulse);
             StopAllCoroutines();
             StartCoroutine(CoolDownReverse());
+            if (invert) { PlayRearParticles(); } else { PlayFrontParticles(); }
         }
 
         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
             _direction = invert ? transform.forward : -transform.forward;
             _rigidBody.AddForce(_direction * thrust, _force);
+            if (invert) { PlayFrontParticles(); } else { PlayRearParticles(); }
         }
         else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
             _direction = invert ? -transform.forward : transform.forward;
             _rigidBody.AddForce(_direction * thrust, _force);
+            if (invert) { PlayRearParticles(); } else { PlayFrontParticles(); }
         }
 
         if (_rigidBody.angularVelocity.magnitude > 0.1) {
@@ -145,6 +151,18 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator CoolDownReverse () {
         yield return new WaitForSeconds(2f);
         _canBigThrust = true;
+    }
+
+    void PlayRearParticles () {
+        foreach (ParticleSystem p in rearParticles) {
+            p.Emit(1);
+        }
+    }
+
+    void PlayFrontParticles () {
+        foreach (ParticleSystem p in frontParticles) {
+            p.Emit(1);
+        }
     }
     #endregion
 }
