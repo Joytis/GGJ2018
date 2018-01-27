@@ -45,12 +45,19 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate () {
         // Key input bindings
         if (Input.GetKey(KeyCode.UpArrow)) {
-            _direction = invert ? -transform.forward : transform.forward;
+            _direction = invert ? transform.forward : -transform.forward;
             _rigidBody.AddForce(_direction * thrust, _force);
         }
         else if (Input.GetKey(KeyCode.DownArrow)) {
-            _direction = invert ? transform.forward : -transform.forward;
+            _direction = invert ? -transform.forward : transform.forward;
             _rigidBody.AddForce(_direction * thrust, _force);
+        }
+
+        if (_rigidBody.angularVelocity.magnitude > 0.1) {
+            _rigidBody.angularVelocity *= 0.9f;
+        }
+        else if (_rigidBody.angularVelocity.magnitude > 0) {
+            _rigidBody.angularVelocity = Vector3.zero;
         }
     }
     #endregion

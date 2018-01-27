@@ -16,6 +16,7 @@ public class SpaceCraftManager : MonoBehaviour
 
     public SpaceCraft current;
     public GameObject[] SpaceCrafts;
+    public Transform StartingPosition;
     GameObject spaceCraft = null;
 
     #region MonoBehaviour
@@ -35,10 +36,9 @@ public class SpaceCraftManager : MonoBehaviour
     #region Public Methods
     public void UpdateCraft (SpaceCraft craft) {
         current = craft;
-        Vector3 pos = Vector3.zero;
+        Vector3 pos = StartingPosition.position;
         Vector3 vel = Vector3.zero;
-        Vector3 angVel = Vector3.zero;
-        Quaternion rot = Quaternion.Euler(0f, 180f, 0f);
+        Quaternion rot = StartingPosition.rotation;
 
         if (spaceCraft != null) {
             pos = spaceCraft.transform.position;
@@ -48,9 +48,7 @@ public class SpaceCraftManager : MonoBehaviour
             spaceCraft = null;
         }
 
-        spaceCraft = Instantiate(SpaceCrafts[(int)current]);
-        spaceCraft.transform.position = pos;
-        spaceCraft.transform.rotation = rot;
+        spaceCraft = Instantiate(SpaceCrafts[(int)current], pos, rot);
         spaceCraft.GetComponent<Rigidbody>().velocity = vel;
     }
     #endregion
