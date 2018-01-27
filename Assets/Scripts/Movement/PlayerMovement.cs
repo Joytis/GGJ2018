@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float thrust;
     public float turn;
     public bool invert;
-    public float _maxTurn = 5f;
+    float _maxTurn = 5f;
     float _rotation = 0f;
     Rigidbody _rigidBody;
     Vector3 _direction = Vector3.zero;
