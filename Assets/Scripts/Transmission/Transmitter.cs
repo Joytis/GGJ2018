@@ -62,8 +62,11 @@ public class Transmitter : MonoBehaviour {
 
 			if(go.layer == LayerMask.NameToLayer("Receiver")) {
 				var rec = go.GetComponent<Receiver>();
+				if(rec == null) {
+					rec = go.GetComponentInChildren<Receiver>();
+				}
+				rec.DoThing();
 				terminate = true;
-				rec.Light();
 			}
 		}
 
