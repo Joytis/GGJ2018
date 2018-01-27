@@ -63,6 +63,8 @@ public class Transmitter : MonoBehaviour {
 			// Check for special collisions()
 			var go = hit.collider.gameObject;
 
+			// Basic Beam Contact checker. 
+			//=============================================
 			// Check if we have a beam Contact on the thing. If we do, sick!
 			var bc = go.GetComponent<IBeamContact>();
 			if(bc == null) {
@@ -90,6 +92,39 @@ public class Transmitter : MonoBehaviour {
 				rec.DoThing();
 				terminate = true;
 				break;
+			}
+
+			// SPECIAL CASE FOR PORTALS. Teleport the starting point somewhere else
+			//============================================
+			if(go.layer == LayerMask.NameToLayer("Portals")) {
+				var firstNode = go.GetComponent<PortalNode>();
+				var secondNode = firstNode._link;
+
+				Debug.Log(firstNode);
+				Debug.Log(secondNode);
+
+				var position1 = firstNode.transform.position;
+				var position2 = secondNode.transform.position;
+
+				var distanceFromNode = hit.point - position1;
+				var outwardsDirection = Vector3.Reflect(direction, hit.normal) * -1;
+				var rotFromUp = Quaternion.LookRotation(outwardsDirection, firstNode.transform.up);
+
+				Debug.Log(distanceFromNode);
+				Debug.Log(outwardsDirection);
+				Debug.Log(rotFromUp);
+
+				var distanceMag = distanceFromNode.magnitude;
+				Debug.Log(distanceMag);
+
+				var newDirection = rotFromUp * secondNode.transform.up;
+				var newPoint = position2 + newDirection.normalized * distanceMag;
+				positions.Add(startPosition);
+
+				Debug.Log(newDirection);
+				Debug.Log(newPoint);
+				direction = newDirection;
+				startPosition = newPoint;
 			}
 
 		}

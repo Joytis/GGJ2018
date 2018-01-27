@@ -13,7 +13,9 @@
 				"*.csproj",
 				"*.sln",
 				"*meta",
-				"*prefab"
+				"*prefab",
+				"*asset",
+				"*mat"
 
 			]
 		}
