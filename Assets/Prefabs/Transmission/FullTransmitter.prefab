@@ -428,7 +428,7 @@ MonoBehaviour:
   length: 1000
   collisions:
     serializedVersion: 2
-    m_Bits: 3840
+    m_Bits: 7936
   terminalCollisions:
     serializedVersion: 2
     m_Bits: 3072
@@ -456,11 +456,11 @@ LineRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 0
+  m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6981dccdbd114a7011005aba44295342, type: 2}
+  - {fileID: 2100000, guid: df0665fb25fa0b148ab5fda04ba968f7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

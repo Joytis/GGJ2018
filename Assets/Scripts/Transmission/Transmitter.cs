@@ -103,27 +103,23 @@ public class Transmitter : MonoBehaviour {
 				Debug.Log(firstNode);
 				Debug.Log(secondNode);
 
-				var position1 = firstNode.transform.position;
-				var position2 = secondNode.transform.position;
+				var position1 = firstNode.GetComponent<BoxCollider>().center + firstNode.transform.position;
+				var position2 = secondNode.GetComponent<BoxCollider>().center + secondNode.transform.position;
 
-				var distanceFromNode = hit.point - position1;
-				var outwardsDirection = Vector3.Reflect(direction, hit.normal) * -1;
+				var distanceFromNode = position1 - hit.point;
+				var outwardsDirection = Vector3.Reflect(direction * -1, hit.normal);
 				var rotFromUp = Quaternion.LookRotation(outwardsDirection, firstNode.transform.up);
-
-				Debug.Log(distanceFromNode);
-				Debug.Log(outwardsDirection);
-				Debug.Log(rotFromUp);
-
 				var distanceMag = distanceFromNode.magnitude;
+
 				Debug.Log(distanceMag);
 
 				var newDirection = rotFromUp * secondNode.transform.up;
-				var newPoint = position2 + newDirection.normalized * distanceMag;
+				var newPoint = position2;
 				positions.Add(startPosition);
 
 				Debug.Log(newDirection);
 				Debug.Log(newPoint);
-				direction = newDirection;
+				direction = secondNode.transform.up;
 				startPosition = newPoint;
 			}
 
