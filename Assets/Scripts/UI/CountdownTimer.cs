@@ -14,6 +14,7 @@ public class CountdownTimer : MonoBehaviour {
 
 	int minutes;
 	int seconds;
+	int miliseconds;
 
 	enum State {
 		Ticking,
@@ -24,6 +25,8 @@ public class CountdownTimer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start() {
+		// _tex.color = Color.red;
+
 		currentTime = startTime;
 		_tex = GetComponent<Text>();
 		_recv.RegisterDoSomething(new Receiver.DoSomething(StopTimer));
@@ -48,9 +51,13 @@ public class CountdownTimer : MonoBehaviour {
 
 		// Translate time to text. 
 		minutes = Mathf.FloorToInt(currentTime / 60f);
+		if(minutes < 0) minutes = 0;
 		seconds = Mathf.FloorToInt(currentTime % 60f);
+		if(seconds < 0) seconds = 0;
+		miliseconds = Mathf.FloorToInt((currentTime * 1000) % 1000);
+		if(miliseconds < 0) miliseconds = 0;
 
-		_tex.text = String.Format("{0}:{1:00}", minutes, seconds);
+		_tex.text = String.Format("{0}:{1:00}.{2:000}", minutes, seconds, miliseconds);
 	}
 
 	void StopTimer() {
