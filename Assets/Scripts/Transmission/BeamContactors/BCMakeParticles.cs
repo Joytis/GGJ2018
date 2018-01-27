@@ -9,6 +9,8 @@ public class BCMakeParticles : MonoBehaviour, IBeamContact {
 	// Accept raycast hit for contact point. 
 	public void Activate(RaycastHit hit) {
 		foreach(var p in _particles) {
+
+			Debug.Log("Activated for " + gameObject);
 			Reposition(hit, p);
 			p.Play();
 		}

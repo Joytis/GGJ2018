@@ -65,8 +65,13 @@ public class Transmitter : MonoBehaviour {
 
 			// Check if we have a beam Contact on the thing. If we do, sick!
 			var bc = go.GetComponent<IBeamContact>();
-			if(bc != null) {
-				// Activate the stuff. 
+			if(bc == null) {
+				bc = go.GetComponentInParent<IBeamContact>();
+				if(bc != null) {
+					newContacts[bc] = hit; // Don't care if it's already there. C# has our back here. 
+				}
+			}
+			else {
 				newContacts[bc] = hit; // Don't care if it's already there. C# has our back here. 
 			}
 
@@ -84,6 +89,7 @@ public class Transmitter : MonoBehaviour {
 				}
 				rec.DoThing();
 				terminate = true;
+				break;
 			}
 
 		}
