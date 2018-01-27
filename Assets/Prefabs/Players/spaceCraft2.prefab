@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 64093074892544564}
   - component: {fileID: 54725479645603132}
   - component: {fileID: 114370256350824650}
+  - component: {fileID: 114106796643374260}
   m_Layer: 11
   m_Name: spaceCraft2
   m_TagString: Player
@@ -501,6 +502,17 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114106796643374260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1565008058850734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f483a2523872cd94e852fe34908e9bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114370256350824650
 MonoBehaviour:
   m_ObjectHideFlags: 1

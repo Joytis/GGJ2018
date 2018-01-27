@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 54509537689116634}
   - component: {fileID: 114222174526776876}
   - component: {fileID: 114274754575494920}
+  - component: {fileID: 114656650294053278}
   m_Layer: 11
   m_Name: spaceCraft4
   m_TagString: Player
@@ -944,6 +945,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198065303693669790}
+--- !u!114 &114656650294053278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1117086767952144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f483a2523872cd94e852fe34908e9bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198030584976456376
 ParticleSystem:
   m_ObjectHideFlags: 1
