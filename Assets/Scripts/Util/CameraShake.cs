@@ -39,7 +39,7 @@ public class CameraShake : MonoBehaviour {
 			offset.x =  maxAngle * shake * (offset.x - 0.5f) * 2f;
 			offset.y =  maxAngle * shake * (offset.y - 0.5f) * 2f;
 			offset.z =  maxAngle * shake * (offset.z - 0.5f) * 2f;
-			// Debug.Log(offset);
+			Debug.Log("Offset: " + offset);
 	
 			rotation = Quaternion.Euler(offset);	
 			// Add it to camera for that frame. 

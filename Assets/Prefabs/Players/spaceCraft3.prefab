@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 64379181693605318}
   - component: {fileID: 54002959957976286}
   - component: {fileID: 114038534990324040}
+  - component: {fileID: 114760070513991062}
   m_Layer: 11
   m_Name: spaceCraft3
   m_TagString: Player
@@ -643,6 +644,17 @@ MonoBehaviour:
   thrust: 8
   turn: 2
   invert: 0
+--- !u!114 &114760070513991062
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179818348844638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f483a2523872cd94e852fe34908e9bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198081485236090530
 ParticleSystem:
   m_ObjectHideFlags: 1
