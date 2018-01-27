@@ -60,6 +60,12 @@ public class Transmitter : MonoBehaviour {
 			// Check for special collisions()
 			var go = hit.collider.gameObject;
 
+			// Don't go further. 
+			if(go.layer == LayerMask.NameToLayer("Obstructable")) {
+				terminate = true;
+				break;
+			}
+
 			if(go.layer == LayerMask.NameToLayer("Receiver")) {
 				var rec = go.GetComponent<Receiver>();
 				if(rec == null) {

@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-[RequireComponent(typeof(Text))]
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class CountdownTimer : MonoBehaviour {
 
 	public float startTime = 60f; // in seconds. 
@@ -21,14 +22,14 @@ public class CountdownTimer : MonoBehaviour {
 		NotTicking
 	};
 	State currentState = State.Ticking;
-	Text _tex;
+	TextMeshProUGUI _tex;
 
 	// Use this for initialization
 	void Start() {
 		// _tex.color = Color.red;
 
 		currentTime = startTime;
-		_tex = GetComponent<Text>();
+		_tex = GetComponent<TextMeshProUGUI>();
 		_recv.RegisterDoSomething(new Receiver.DoSomething(StopTimer));
 		_recv.RegisterAntiSomething(new Receiver.DoSomething(StartTimer));
 	}
