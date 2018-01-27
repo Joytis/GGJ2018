@@ -24,13 +24,13 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKey(KeyCode.RightArrow)) {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A)) {
             _rotation += turn;
             _rotation = (_rotation > _maxTurn ? _maxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
             _canBigThrust = true;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow)) {
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D)) {
             _rotation -= turn;
             _rotation = (_rotation < -_maxTurn ? -_maxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
@@ -40,33 +40,37 @@ public class PlayerMovement : MonoBehaviour
             _rotation = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.F)) { _force = ForceMode.Force; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
-        if (Input.GetKeyDown(KeyCode.A)) { _force = ForceMode.Acceleration; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
-        if (Input.GetKeyDown(KeyCode.I)) { _force = ForceMode.Impulse; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
-        if (Input.GetKeyDown(KeyCode.V)) { _force = ForceMode.VelocityChange; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            DropReflector();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1)) { _force = ForceMode.Force; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
+        if (Input.GetKeyDown(KeyCode.Alpha2)) { _force = ForceMode.Acceleration; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
+        if (Input.GetKeyDown(KeyCode.Alpha3)) { _force = ForceMode.Impulse; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
+        if (Input.GetKeyDown(KeyCode.Alpha4)) { _force = ForceMode.VelocityChange; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
     }
 
     void FixedUpdate () {
         // Key input bindings
-        if (Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow) && _canBigThrust) {
+        if (((Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow)) || (Input.GetKeyDown(KeyCode.W) && !Input.GetKey(KeyCode.S))) && _canBigThrust) {
             _direction = invert ? transform.forward : -transform.forward;
             _rigidBody.AddForce(_direction * thrust * 2f, ForceMode.Impulse);
             _canBigThrust = false;
             StopAllCoroutines();
             StartCoroutine(CoolDownForward());
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow) && _canBigThrust) {
+        else if (((Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow)) || (Input.GetKeyDown(KeyCode.S) && !Input.GetKey(KeyCode.W))) && _canBigThrust) {
             _direction = invert ? -transform.forward : transform.forward;
             _rigidBody.AddForce(_direction * thrust * 2f, ForceMode.Impulse);
             StopAllCoroutines();
             StartCoroutine(CoolDownReverse());
         }
 
-        if (Input.GetKey(KeyCode.UpArrow)) {
+        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
             _direction = invert ? transform.forward : -transform.forward;
             _rigidBody.AddForce(_direction * thrust, _force);
         }
-        else if (Input.GetKey(KeyCode.DownArrow)) {
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
             _direction = invert ? -transform.forward : transform.forward;
             _rigidBody.AddForce(_direction * thrust, _force);
         }
@@ -80,9 +84,9 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void OnTriggerExit (Collider other) {
-        //if (other.CompareTag("Base")) {
-        //    BaseManager.SpawnReflector(this);
-        //}
+        if (other.CompareTag("Base") && _reflector == null) {
+            BaseManager.Instance.SpawnReflector(this);
+        }
     }
     #endregion
 
@@ -123,6 +127,12 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject GetReflector () {
         return _reflector;
+    }
+
+    public void DropReflector () {
+        if (_reflector == null) { return; }
+        //_reflector.GetComponent<ReflectorMovement>().RemoveSpaceCraft(this);
+        _reflector = null;
     }
     #endregion
 
