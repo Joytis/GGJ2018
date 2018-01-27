@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4223693626371912}
   - component: {fileID: 198686143373189154}
   - component: {fileID: 199020479693108608}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ef_GlowExParticle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4873929555698022}
   - component: {fileID: 198496354275238714}
   - component: {fileID: 199013830533626180}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ef_GlowExParticle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 64958993994413404}
   - component: {fileID: 54509537689116634}
   - component: {fileID: 114222174526776876}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: spaceCraft4
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4067918262175274}
   - component: {fileID: 198154151922433712}
   - component: {fileID: 199443793292160330}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: rearLeftParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4688208823537694}
   - component: {fileID: 198480684329246176}
   - component: {fileID: 199600735005732658}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: rightTopParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4667797299512926}
   - component: {fileID: 198663389330519456}
   - component: {fileID: 199870951353472082}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ef_GlowExParticle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4681734013253792}
   - component: {fileID: 198812723977630966}
   - component: {fileID: 199829541464824488}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: rearRightParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 4521606047912092}
   - component: {fileID: 198755281257353716}
   - component: {fileID: 199166055592504136}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: rightBottomParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4260972688535224}
   - component: {fileID: 108283137741919136}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4713838315265530}
   - component: {fileID: 108351818565394288}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4865158521524180}
   - component: {fileID: 108705814829686742}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4918660978842130}
   - component: {fileID: 108198033132423706}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 4399138307782318}
   - component: {fileID: 198918607576601132}
   - component: {fileID: 199945453582954552}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: rightTopParticle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 4214325464761760}
   - component: {fileID: 198030584976456376}
   - component: {fileID: 199911521061365276}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ef_GlowExParticle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 4595206223537790}
   - component: {fileID: 198268526733798078}
   - component: {fileID: 199202843248103454}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ef_GlowExParticle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -274,7 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4294550265057900}
   - component: {fileID: 108187865616966458}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 4017841548316838}
   - component: {fileID: 198721761134912660}
   - component: {fileID: 199270776080748832}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ef_GlowExParticle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 4146647892550392}
   - component: {fileID: 198570454267387134}
   - component: {fileID: 199607264274139310}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: rightBottomParticle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4326406441379964}
   - component: {fileID: 108925348426346722}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
