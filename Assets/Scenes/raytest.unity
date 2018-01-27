@@ -113,6 +113,46 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &27650005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 27650007}
+  - component: {fileID: 27650006}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &27650006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 27650005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d80f28ba6d2acb44bb0fab15075c4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &27650007
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 27650005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 116.14979, y: 29.578588, z: -58.816288}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &41270824
 Prefab:
   m_ObjectHideFlags: 0
@@ -2320,6 +2360,81 @@ Prefab:
         type: 2}
       propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[6].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 50.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.gravityModifier.minScalar
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 50.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.gravityModifier.minScalar
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.minScalar
+      value: 0.4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 50.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: InitialModule.gravityModifier.minScalar
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
+        type: 2}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
       objectReference: {fileID: 0}
     - target: {fileID: 198065303693669790, guid: fb249ca3ec12bad4fa8357dfd67323fc,
         type: 2}
