@@ -23,10 +23,12 @@ public class Receiver : MonoBehaviour {
 	public void DoThing() {
 		if(!triggered) {
 			internalSomething(); // Dispatch delegate
-			triggered = true;
-			currentTime = 0f;
 		}
+		triggered = true;
+		currentTime = 0f;
 	}
+
+	
 
 
 	// Registers a DoSomethingAction

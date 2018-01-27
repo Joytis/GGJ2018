@@ -9,7 +9,7 @@ public class TurnColorOnReceive : MonoBehaviour {
 	public Color color = Color.white;
 	public List<MeshRenderer> thingsToColor;
 
-	Dictionary<MeshRenderer, Color> originalColors = new Dictionary<MeshRenderer, Color>();
+	Dictionary<Material, Color> originalColors = new Dictionary<Material, Color>();
 
 	// Find receiver in children and hook callbacks into it. 
 	void Awake() {
@@ -17,21 +17,23 @@ public class TurnColorOnReceive : MonoBehaviour {
 		rec.RegisterDoSomething(new Receiver.DoSomething(TurnThingsColors));
 		rec.RegisterAntiSomething(new Receiver.DoSomething(TurnColorsBack));
 
-		foreach(var mesh in thingsToColor) {
-			originalColors[mesh] = mesh.material.color;
-		}
+		foreach(var mesh in thingsToColor) 
+			foreach(var mat in mesh.materials) 
+				originalColors[mat] = mat.color;
 	}
 
 	void TurnThingsColors() {
-		foreach(var obj in thingsToColor) {
-			var rend = obj.GetComponent<MeshRenderer>();
-			rend.material.color = color;
-		}
+		Debug.Log("Turning Things Colors");
+
+		foreach(var mesh in thingsToColor) 
+			foreach(var mat in mesh.materials) 
+				mat.color = color;
 	}
 
 	void TurnColorsBack() {
-		foreach(var mesh in thingsToColor) {
-			mesh.material.color = originalColors[mesh];
-		}	
+		Debug.Log("Reverting");
+		foreach(var mesh in thingsToColor) 
+			foreach(var mat in mesh.materials) 
+				mat.color = originalColors[mat];
 	}
 }

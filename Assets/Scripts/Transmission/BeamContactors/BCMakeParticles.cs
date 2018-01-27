@@ -46,7 +46,7 @@ public class BCMakeParticles : MonoBehaviour, IBeamContact {
 			var q = Quaternion.LookRotation(normal, Vector3.forward - transform.rotation.eulerAngles);
 
 			// Shange rotation and position of shape. 
-			shape.rotation = q.eulerAngles - transform.rotation.eulerAngles; 
+			shape.rotation = q.eulerAngles; 
 			shape.position = extraRotation * offset;
 		}
 	}
