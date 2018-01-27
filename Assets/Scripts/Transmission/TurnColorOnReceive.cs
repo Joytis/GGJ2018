@@ -23,15 +23,12 @@ public class TurnColorOnReceive : MonoBehaviour {
 	}
 
 	void TurnThingsColors() {
-		Debug.Log("Turning Things Colors");
-
 		foreach(var mesh in thingsToColor) 
 			foreach(var mat in mesh.materials) 
 				mat.color = color;
 	}
 
-	void TurnColorsBack() {
-		Debug.Log("Reverting");
+	void TurnColorsBack() {	
 		foreach(var mesh in thingsToColor) 
 			foreach(var mat in mesh.materials) 
 				mat.color = originalColors[mat];

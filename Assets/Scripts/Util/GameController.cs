@@ -1,22 +1,13 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
 	// Singleton GameObject, me. 
 	public static GameController single = null;
 
-
-	CameraShake _cameraShake;
-
-	// Should be the SINGLE player instance. When a player Awakes, they will register themself
-	//		as the active player. Various systems will then snag the player 
-	// NOTE(clark): You should NEVER GET THE PLAYER FROM AN ACTIVE SCENE on AWAKE! 
-	// NOTE(clark): ONLY CALL THIS PROPERTY ON START!!!
-	public GameObject Player { get; private set; }
-
-	// Should be the SINGLE LEVELINFO instance.  
-	// NOTE(clark): You should NEVER GET THE PLAYER FROM AN ACTIVE SCENE on AWAKE! 
-	public GameObject LevelInfo { get; private set; }
+	// SHAKE ALL THE FUCKING CAMERAS. 
+	List<CameraShake> _cameraShake = new List<CameraShake>();
 
 	void Awake() {
 		if(single == null) {
@@ -27,34 +18,24 @@ public class GameController : MonoBehaviour {
 			Destroy(gameObject);
 			return;
 		}
-
-		// Grab the player and LeveInfo in the scene!
-		//==============================================================
-		Player = GameObject.FindWithTag("Player");
-		LevelInfo = GameObject.FindWithTag("LevelInfo");
-
 		// Grab the camera screen shake thing
 		//===============================================================
-		_cameraShake = Camera.main.GetComponent<CameraShake>();
-
-	}
-
-	public void Respawn() {
-		if(Player) {
-			Player.transform.SetPositionAndRotation(new Vector3(0, 7, 0), Quaternion.identity);
+		Debug.Log("Camera: " + _cameraShake);
+		var cams = Camera.allCameras;
+		foreach(var cam in cams) {
+			var cs = cam.GetComponent<CameraShake>();
+			if(cs) _cameraShake.Add(cs);
 		}
 	}
 
-	public void CancelCameraShake() {
-		if(_cameraShake) {
-			_cameraShake.RemoveAllTrauma();
-		}
+	public void CancelCameraShake() {	
+		foreach(var cam in _cameraShake)
+			cam.RemoveAllTrauma();
 	}
 
 	public void ApplyCameraShake(float amount) {
 		// Just pass through to whatever component we're using. 
-		if(_cameraShake) {
-			_cameraShake.AddTrauma(amount);
-		}
+		foreach(var cam in _cameraShake)
+			cam.AddTrauma(amount);
 	}
 }
