@@ -304,7 +304,7 @@ MonoBehaviour:
   length: 1000
   collisions:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 3840
   maxBounceCount: 20
 --- !u!120 &120283730371615924
 LineRenderer:

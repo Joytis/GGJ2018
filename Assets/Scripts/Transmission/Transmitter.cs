@@ -10,7 +10,10 @@ public class Transmitter : MonoBehaviour {
 
 	public float length = 50;
 	public LayerMask collisions;
+	public LayerMask terminalCollisions;
 	public int maxBounceCount = 20;
+
+	HashSet<int> terminalLayers = new HashSet<int>();
 
 	int currentCount = 0;
 
@@ -23,6 +26,11 @@ public class Transmitter : MonoBehaviour {
 
 	void Awake()  {
 		_lr = GetComponent<LineRenderer>();
+
+		// Check for bitshifted layers, add them to terminal layers. 
+		for(int i = 0; i < 32; i++) 
+			if(((terminalCollisions >> i) & 0x1) == 1) 
+				terminalLayers.Add(i);
 	}
 
 	// Update is called once per frame
@@ -58,14 +66,13 @@ public class Transmitter : MonoBehaviour {
 			// Check if we have a beam Contact on the thing. If we do, sick!
 			var bc = go.GetComponent<IBeamContact>();
 			if(bc != null) {
-				Debug.Log("Found beam contact");
 				// Activate the stuff. 
 				newContacts[bc] = hit; // Don't care if it's already there. C# has our back here. 
 			}
 
 			// DON"T DO ANTHING MORE IF OBSTRUCTABLE
 			//=============================================
-			if(go.layer == LayerMask.NameToLayer("Obstructable")) {
+			if(terminalLayers.Contains(go.layer)) {
 				terminate = true;
 				break;
 			}
