@@ -36,10 +36,10 @@ public class PlayerMovement : MonoBehaviour
             _rotation = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.F)) { _force = ForceMode.Force; _direction = _rigidBody.velocity = _rigidBody.angularVelocity = transform.position = Vector3.zero; }
-        if (Input.GetKeyDown(KeyCode.A)) { _force = ForceMode.Acceleration; _direction = _rigidBody.velocity = _rigidBody.angularVelocity = transform.position = Vector3.zero; }
-        if (Input.GetKeyDown(KeyCode.I)) { _force = ForceMode.Impulse; _direction = _rigidBody.velocity = _rigidBody.angularVelocity = transform.position = Vector3.zero; }
-        if (Input.GetKeyDown(KeyCode.V)) { _force = ForceMode.VelocityChange; _direction = _rigidBody.velocity = _rigidBody.angularVelocity = transform.position = Vector3.zero; }
+        if (Input.GetKeyDown(KeyCode.F)) { _force = ForceMode.Force; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
+        if (Input.GetKeyDown(KeyCode.A)) { _force = ForceMode.Acceleration; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
+        if (Input.GetKeyDown(KeyCode.I)) { _force = ForceMode.Impulse; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
+        if (Input.GetKeyDown(KeyCode.V)) { _force = ForceMode.VelocityChange; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
     }
 
     void FixedUpdate () {
