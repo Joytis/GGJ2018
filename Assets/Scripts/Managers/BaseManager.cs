@@ -7,6 +7,7 @@ public class BaseManager : MonoBehaviour
     public static BaseManager Instance;
     public int NumberOfReflectors;
     public GameObject ReflectorPrefab;
+    int _remainingReflectors;
 
     #region MonoBehaviour
     // Use this for initialization
@@ -14,16 +15,30 @@ public class BaseManager : MonoBehaviour
         if (Instance == null) {
             Instance = this;
         }
+
+        Instance._remainingReflectors = Instance.NumberOfReflectors;
     }
     #endregion
 
     #region Public Methods
-    public void SpawnReflector(PlayerMovement player) {
-        if (NumberOfReflectors > 0) {
+    public void SpawnReflector (PlayerMovement player) {
+        if (_remainingReflectors > 0) {
             GameObject go = Instantiate(ReflectorPrefab);
+            go.AddComponent<ReflectorMovement>();
             player.SetReflector(go);
-            --NumberOfReflectors;
+            --_remainingReflectors;
         }
+    }
+
+    public void SetNumReflectors (int num) {
+        NumberOfReflectors = num;
+        _remainingReflectors = num;
+    }
+
+    public void UpdateNumReflectors (int num) {
+        int used = NumberOfReflectors - _remainingReflectors;
+        NumberOfReflectors = num;
+        _remainingReflectors = num - used;
     }
     #endregion
 }

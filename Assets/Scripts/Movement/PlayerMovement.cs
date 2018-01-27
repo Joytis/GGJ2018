@@ -122,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
     public void SetReflector (GameObject go) {
         _reflector = go;
         if (_reflector == null) { return; }
-        //_reflector.GetComponent<ReflectorMovement>().SetSpaceCraft(this);
+        _reflector.GetComponent<ReflectorMovement>().SetSpaceCraft(this.gameObject);
     }
 
     public GameObject GetReflector () {
@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void DropReflector () {
         if (_reflector == null) { return; }
-        //_reflector.GetComponent<ReflectorMovement>().RemoveSpaceCraft(this);
+        _reflector.GetComponent<ReflectorMovement>().DestroySelf();
         _reflector = null;
     }
     #endregion
