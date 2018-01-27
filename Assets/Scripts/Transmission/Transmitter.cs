@@ -15,6 +15,9 @@ public class Transmitter : MonoBehaviour {
 	int currentCount = 0;
 
 	List<Vector3> positions = new List<Vector3>();
+	// Keep a set of beam contacts we've run into recently. 
+	Dictionary<IBeamContact, RaycastHit> prevContacts = new Dictionary<IBeamContact, RaycastHit>();
+	Dictionary<IBeamContact, RaycastHit> newContacts = new Dictionary<IBeamContact, RaycastHit>();
 
 	LineRenderer _lr;
 
@@ -26,6 +29,10 @@ public class Transmitter : MonoBehaviour {
 	void Update () {
 
 		positions.Clear();
+
+		// Garbage collected and everything! 
+		prevContacts = newContacts;
+		newContacts = new Dictionary<IBeamContact, RaycastHit>();
 
 		Vector3 startPosition = transform.position;
 		Vector3 direction = transform.forward;
@@ -39,18 +46,6 @@ public class Transmitter : MonoBehaviour {
 		while(currentCount < maxBounceCount &&
 			  Physics.Raycast(startPosition, direction, out hit, length, collisions) ) {
 
-			// barycentricCoordinate	The barycentric coordinate of the triangle we hit.
-			// collider	The Collider that was hit.
-			// distance	The distance from the ray's origin to the impact point.
-			// lightmapCoord	The uv lightmap coordinate at the impact point.
-			// normal	The normal of the surface the ray hit.
-			// point	The impact point in world space where the ray hit the collider.
-			// rigidbody	The Rigidbody of the collider that was hit. If the collider is not attached to a rigidbody then it is null.
-			// textureCoord	The uv texture coordinate at the collision location.
-			// textureCoord2	The secondary uv texture coordinate at the impact point.
-			// transform	The Transform of the rigidbody or collider that was hit.
-			// triangleIndex	The index of the triangle that was hit.
-
 			positions.Add(startPosition);
 			startPosition = hit.point;
 			direction = Vector3.Reflect(direction, hit.normal);
@@ -60,7 +55,16 @@ public class Transmitter : MonoBehaviour {
 			// Check for special collisions()
 			var go = hit.collider.gameObject;
 
-			// Don't go further. 
+			// Check if we have a beam Contact on the thing. If we do, sick!
+			var bc = go.GetComponent<IBeamContact>();
+			if(bc != null) {
+				Debug.Log("Found beam contact");
+				// Activate the stuff. 
+				newContacts[bc] = hit; // Don't care if it's already there. C# has our back here. 
+			}
+
+			// DON"T DO ANTHING MORE IF OBSTRUCTABLE
+			//=============================================
 			if(go.layer == LayerMask.NameToLayer("Obstructable")) {
 				terminate = true;
 				break;
@@ -74,7 +78,34 @@ public class Transmitter : MonoBehaviour {
 				rec.DoThing();
 				terminate = true;
 			}
+
 		}
+
+		// Debug.Log("PREVIOUS CONTACTS");
+		// foreach(var bc in prevContacts) 
+			// Debug.Log(bc);
+		// Debug.Log("NEW CONTACTS");
+		// foreach(var bc in newContacts) 
+			// Debug.Log(bc);
+
+
+		// Deactivate things that aren't contacted anymore. 
+		var notInContacts = prevContacts.Keys.Where(bc => !newContacts.ContainsKey(bc));
+		foreach(var bc in notInContacts) {
+			bc.Deactivate();
+		}
+
+		// Activate things things that just got contacted. 
+		var newInContacts = newContacts.Keys.Where(bc => !prevContacts.ContainsKey(bc));
+		foreach(var bc in newInContacts) {
+			bc.Activate(newContacts[bc]); // Activate the thing. 
+		}
+
+		var beenInContacts = newContacts.Keys.Where(bc => prevContacts.ContainsKey(bc));
+		foreach(var bc in beenInContacts) {
+			bc.BCUpdate(newContacts[bc]);
+		}
+
 
 		positions.Add(startPosition);
 
