@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 135921613137391076}
   - component: {fileID: 114232761428057136}
   - component: {fileID: 114447606419418744}
+  - component: {fileID: 114235833305210216}
   m_Layer: 10
   m_Name: meteorFull
   m_TagString: Untagged
@@ -191,6 +192,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198367717308164800}
+--- !u!114 &114235833305210216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907630001206558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814c9ce8ba8781048be4035a00a96745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinRate: {x: 20, y: 20, z: 20}
 --- !u!114 &114447606419418744
 MonoBehaviour:
   m_ObjectHideFlags: 1

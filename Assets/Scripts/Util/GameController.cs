@@ -38,4 +38,7 @@ public class GameController : MonoBehaviour {
 		foreach(var cam in _cameraShake)
 			cam.AddTrauma(amount);
 	}
+
+
+	
 }
