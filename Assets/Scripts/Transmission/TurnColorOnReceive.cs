@@ -30,7 +30,7 @@ public class TurnColorOnReceive : MonoBehaviour {
 				mat.color = color;
 	}
 
-	void TurnColorsBack() {
+	void TurnColorsBack() {	
 		Debug.Log("Reverting");
 		foreach(var mesh in thingsToColor) 
 			foreach(var mat in mesh.materials) 
