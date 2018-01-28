@@ -572,7 +572,6 @@ MonoBehaviour:
   - {fileID: 198755281257353716}
   - {fileID: 198918607576601132}
   - {fileID: 198570454267387134}
-  indexForPickupSound: 18
 --- !u!114 &114274754575494920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -585,7 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particles:
-  - {fileID: 0}
+  - {fileID: 198718871808755040}
 --- !u!114 &114656650294053278
 MonoBehaviour:
   m_ObjectHideFlags: 1

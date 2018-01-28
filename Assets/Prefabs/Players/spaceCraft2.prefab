@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 54725479645603132}
   - component: {fileID: 114370256350824650}
   - component: {fileID: 114106796643374260}
+  - component: {fileID: 114616873514146984}
   m_Layer: 11
   m_Name: spaceCraft2
   m_TagString: Player
@@ -393,7 +394,19 @@ MonoBehaviour:
   frontParticles:
   - {fileID: 198024970492042730}
   - {fileID: 198933188144834136}
-  indexForPickupSound: 18
+--- !u!114 &114616873514146984
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1565008058850734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd0d547924f85d440aa3cc16b511739e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _particles:
+  - {fileID: 198989709650084998}
 --- !u!198 &198022167015214330
 ParticleSystem:
   m_ObjectHideFlags: 1
