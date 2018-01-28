@@ -82,6 +82,7 @@ public class ShowPanels : MonoBehaviour {
 	{
 		pausePanel.SetActive (true);
 		optionsTint.SetActive(true);
+		helpPanel.SetActive(false);
         SetSelection(pausePanel);
     }
 
@@ -90,6 +91,7 @@ public class ShowPanels : MonoBehaviour {
 	{
 		pausePanel.SetActive (false);
 		optionsTint.SetActive(false);
+		helpPanel.SetActive(false);
 
 	}
 }
