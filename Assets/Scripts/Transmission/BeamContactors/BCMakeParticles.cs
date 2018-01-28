@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class BCMakeParticles : MonoBehaviour, IBeamContact {
 
 	public List<ParticleSystem> _particles;
-	public UnityEvent Sound;
+	public int _soundIndex;
 
 	// Accept raycast hit for contact point. 
 	public void Activate(RaycastHit hit) {
@@ -16,7 +16,7 @@ public class BCMakeParticles : MonoBehaviour, IBeamContact {
 			p.Play();
 		}
 
-		if (Sound != null) { Sound.Invoke(); }
+		if (AudioController.Instance != null) { AudioController.Instance.PlayAudio(_soundIndex); }
 	}
 
 	public void Deactivate() {

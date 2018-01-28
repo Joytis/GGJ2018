@@ -51,8 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0737de6867eeac4895c1a187b2d790a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingPosition: {fileID: 0}
+  _burstMultiplier: 1
   current: 1
-  SpaceCrafts:
+  spaceCrafts:
   - {fileID: 1826290536521042, guid: 7fc70d6b4ec644e4bb0821bdd30623fd, type: 2}
   - {fileID: 1565008058850734, guid: 0ad778cc0a0fac945b9fd79099fc85d5, type: 2}
   - {fileID: 1179818348844638, guid: 49035a73800a5a648ae4c7b844da403d, type: 2}
