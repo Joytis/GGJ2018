@@ -14,8 +14,6 @@ public class PollBaseFuckIt : MonoBehaviour {
 		_bm = BaseManager.Instance;
 		// _tmp = GetComponent<TextMeshProUGUI>();
 		if(_bm != null) {
-			Debug.Log("Base manager Exists");
-			Debug.Log(_bm.GetNumReflectorsLeft().ToString());
 			_tmp.text = _bm.GetNumReflectorsLeft().ToString();
 		}	
 	}
