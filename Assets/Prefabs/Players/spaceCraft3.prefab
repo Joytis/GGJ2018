@@ -378,8 +378,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835faa4ff6c51874ba43005b761f8baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 32
-  turn: 2
+  shit1: 1
+  shit2: 1
+  thrust: 64
+  turn: 10
   invert: 0
   rearParticles:
   - {fileID: 198081485236090530}

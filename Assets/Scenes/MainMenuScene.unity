@@ -217,7 +217,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 174.2, y: -22.93}
-  m_SizeDelta: {x: 129.5, y: 45.86}
+  m_SizeDelta: {x: 165.5, y: 45.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &113071218
 MonoBehaviour:
@@ -658,7 +658,7 @@ Prefab:
     - target: {fileID: 224493328493272266, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -29.67662
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224493328493272266, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -668,7 +668,7 @@ Prefab:
     - target: {fileID: 224493328493272266, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 59.35324
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224100741501384992, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -688,7 +688,7 @@ Prefab:
     - target: {fileID: 224100741501384992, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -29.67662
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224100741501384992, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -698,7 +698,7 @@ Prefab:
     - target: {fileID: 224100741501384992, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 59.35324
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224797379754050148, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -718,7 +718,7 @@ Prefab:
     - target: {fileID: 224797379754050148, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -29.67662
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224797379754050148, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -728,7 +728,7 @@ Prefab:
     - target: {fileID: 224797379754050148, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 59.35324
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
@@ -1014,7 +1014,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 60
+  m_text: '60.00
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f45882a1371eb0844817f520c6c8a99a, type: 2}
   m_sharedMaterial: {fileID: 21764296983396174, guid: f45882a1371eb0844817f520c6c8a99a,
@@ -1082,10 +1084,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 967616542}
-    characterCount: 2
+    characterCount: 6
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1385,7 +1387,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -60.5, y: -0.000061035156}
+  m_AnchoredPosition: {x: -83, y: -0.000061035156}
   m_SizeDelta: {x: 45.27, y: 45.264}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868166257

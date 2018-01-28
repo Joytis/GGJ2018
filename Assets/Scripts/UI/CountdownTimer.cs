@@ -60,7 +60,7 @@ public class CountdownTimer : MonoBehaviour {
 		// Translate time to text. 
 		minutes = Mathf.FloorToInt(currentTime / 60f);
 		if(minutes < 0) minutes = 0;
-		seconds = Mathf.FloorToInt(currentTime % 60f);
+		seconds = Mathf.FloorToInt(currentTime % 61f);
 		if(seconds < 0) seconds = 0;
 		miliseconds = Mathf.FloorToInt((currentTime * 1000) % 1000) / 10;
 		if(miliseconds < 0) miliseconds = 0;
