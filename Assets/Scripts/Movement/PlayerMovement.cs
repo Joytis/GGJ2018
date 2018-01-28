@@ -34,13 +34,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update () {
         if (Input.GetKey(_right)) {
-            _rotation += turn;
+            _rotation += turn * Time.deltaTime;
             _rotation = (_rotation > _maxTurn ? _maxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
             //_canBigThrust = true;
         }
         else if (Input.GetKey(_left)) {
-            _rotation -= turn;
+            _rotation -= turn * Time.deltaTime;
             _rotation = (_rotation < -_maxTurn ? -_maxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
             //_canBigThrust = true;
@@ -106,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
         }
         else {
             if (_rigidBody.velocity.magnitude > 1f) {
-                Debug.Log(_rigidBody.velocity.magnitude);
                 _rigidBody.velocity *= ((_rigidBody.velocity.magnitude > 50f) && (_rigidBody.velocity.magnitude < 10f)) ? 0.25f : 0.975f;
                 if (_isForward && !invert) { PlayFrontParticles(); } else { PlayRearParticles(); }
             }
