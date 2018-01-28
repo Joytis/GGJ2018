@@ -16,6 +16,11 @@ public class GameController : MonoBehaviour {
 	public CanvasGroup _cg; // fucking black-ass screen all up in my buziness dawg. Geezus. 
 	public CountdownTimer _cdt;
 	LevelSwapper _levelSwapper;
+	public GameObject gameTopPanel;
+	public GameObject gameResPanel;
+	public GameObject gameWinText;
+	public GameObject gameLoseText;
+
 
 	string currentScene;
 
@@ -138,30 +143,70 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void LoseTheGame() {
-		Debug.Log("You Lose :c");
+		ShowResults(false);
 	}
 
+
 	public void FinishLevel() {
-		if(!_levelSwapper.StartNextLevel()) {
+		if(_levelSwapper.HasNextLevel()) {
+			// Do next level stuff
+			_levelSwapper.StartNextLevel();
+		}
+		else {
 			LoadWinGame();
 		}
+		
 	}
+
+	public void QuitInASecond() {
+		Invoke("Quit", 0.5f);
+	}
+
+	void Quit() {
+		//If we are running in a standalone build of the game
+		#if UNITY_STANDALONE
+			//Quit the application
+			Application.Quit();
+		#endif
+
+			//If we are running in the editor
+		#if UNITY_EDITOR
+			//Stop playing the scene
+			UnityEditor.EditorApplication.isPlaying = false;
+		#endif
+	}
+
 
 	void LoadWinGame() {
 		// WIN THE GAME HERE.
 		//==================================================
 
-		//If we are running in a standalone build of the game
-	#if UNITY_STANDALONE
-		//Quit the application
-		Application.Quit();
-	#endif
+		ShowResults(true);
+		
+	}
 
-		//If we are running in the editor
-	#if UNITY_EDITOR
-		//Stop playing the scene
-		UnityEditor.EditorApplication.isPlaying = false;
-	#endif
+	// Two state. True for win, false for lose. 
+	public void ShowResults(bool winLose) {
+		gamegui.SetActive(true);
+		gameTopPanel.SetActive(false);
+		gameResPanel.SetActive(true);
+		gameWinText.SetActive(winLose);
+		gameLoseText.SetActive(!winLose);
+	}
+
+	public void HideResults() {
+		gameTopPanel.SetActive(true);
+		gameResPanel.SetActive(false);
+	}
+
+	public void DoNextLevelFuckIt() {
+		if(_levelSwapper.HasNextLevel()) {
+			_levelSwapper.StartNextLevel();
+		}
+	}
+
+	public void Reset____Everything______() {
+
 	}
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {

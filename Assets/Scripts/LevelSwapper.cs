@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.SceneManagement;
@@ -12,6 +12,10 @@ public class LevelSwapper : MonoBehaviour {
 	void Awake() {
 		currentLevels = levelNames.ToList();
 	}
+
+    public bool HasNextLevel() {
+        return currentLevels.Count > 0;
+    }
 
     public bool StartNextLevel() {
     	if(currentLevels.Count > 0) {
