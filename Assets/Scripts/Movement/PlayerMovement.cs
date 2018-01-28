@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float thrust;
-    public float turn;
     public ParticleSystem[] rearParticles;
     public ParticleSystem[] frontParticles;
     bool _isForward;
-    float _maxTurn = 5f;
     float _rotation = 0f;
     GameObject _reflector;
     Rigidbody _rigidBody;
@@ -19,19 +16,19 @@ public class PlayerMovement : MonoBehaviour
     // Use this for initialization
     void Start () {
         _rigidBody = GetComponent<Rigidbody>();
-
+        _rigidBody.mass = SpaceCraftManager.Instance.Mass;
     }
 
     // Update is called once per frame
     void Update () {
         if (Input.GetKey(SpaceCraftManager.Instance.Right)) {
-            _rotation += turn * Time.deltaTime;
-            _rotation = (_rotation > _maxTurn ? _maxTurn : _rotation);
+            _rotation += SpaceCraftManager.Instance.Turn * Time.deltaTime;
+            _rotation = (_rotation > SpaceCraftManager.Instance.MaxTurn ? SpaceCraftManager.Instance.MaxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
         }
         else if (Input.GetKey(SpaceCraftManager.Instance.Left)) {
-            _rotation -= turn * Time.deltaTime;
-            _rotation = (_rotation < -_maxTurn ? -_maxTurn : _rotation);
+            _rotation -= SpaceCraftManager.Instance.Turn * Time.deltaTime;
+            _rotation = (_rotation < -SpaceCraftManager.Instance.MaxTurn ? -SpaceCraftManager.Instance.MaxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
         }
         else {
@@ -52,12 +49,12 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate () {
         // Key input bindings
         if (Input.GetKey(SpaceCraftManager.Instance.Forward)) {
-            _rigidBody.AddForce(-transform.forward * thrust * SpaceCraftManager.Instance.Burst, _force);
+            _rigidBody.AddForce(-transform.forward * SpaceCraftManager.Instance.Thrust * SpaceCraftManager.Instance.Burst, _force);
             PlayRearParticles();
             _isForward = true;
         }
         else if (Input.GetKey(SpaceCraftManager.Instance.Back)) {
-            _rigidBody.AddForce(transform.forward * thrust * SpaceCraftManager.Instance.Burst, _force);
+            _rigidBody.AddForce(transform.forward * SpaceCraftManager.Instance.Thrust * SpaceCraftManager.Instance.Burst, _force);
             PlayFrontParticles();
             _isForward = false;
         }
@@ -87,22 +84,6 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Public Methods
-    public void SetThrust (float thrust) {
-        this.thrust = thrust;
-    }
-
-    public void SetTurnSpeed (float turn) {
-        this.turn = turn;
-    }
-
-    public void SetMaxTurn (float maxTurn) {
-        _maxTurn = maxTurn;
-    }
-
-    public void SetMass (float mass) {
-        _rigidBody.mass = mass;
-    }
-
     public void SetReflector (GameObject go) {
         _reflector = go;
         if (_reflector == null) { return; }
