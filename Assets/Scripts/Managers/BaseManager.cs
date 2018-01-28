@@ -40,5 +40,9 @@ public class BaseManager : MonoBehaviour
         NumberOfReflectors = num;
         _remainingReflectors = num - used;
     }
+
+    public int GetNumReflectorsLeft () {
+        return Instance._remainingReflectors;
+    }
     #endregion
 }
