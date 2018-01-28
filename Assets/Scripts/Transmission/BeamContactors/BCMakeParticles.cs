@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class BCMakeParticles : MonoBehaviour, IBeamContact {
 
 	public List<ParticleSystem> _particles;
+	public UnityEvent Sound;
 
 	// Accept raycast hit for contact point. 
 	public void Activate(RaycastHit hit) {
@@ -13,6 +15,8 @@ public class BCMakeParticles : MonoBehaviour, IBeamContact {
 			Reposition(hit, p);
 			p.Play();
 		}
+
+		if (Sound != null) { Sound.Invoke(); }
 	}
 
 	public void Deactivate() {
