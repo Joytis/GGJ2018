@@ -41,7 +41,7 @@ public class DoctorWinTheGame : MonoBehaviour {
 				}
 				break;
 		}
-		Debug.Log("Time: " + currentTime);
+		// Debug.Log("Time: " + currentTime);
 		currentIndex = currentTime / timeToWin;
 	}
 

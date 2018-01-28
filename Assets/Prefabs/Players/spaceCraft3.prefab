@@ -59,7 +59,6 @@ GameObject:
   - component: {fileID: 54002959957976286}
   - component: {fileID: 114038534990324040}
   - component: {fileID: 114760070513991062}
-  - component: {fileID: 114749764228001088}
   m_Layer: 11
   m_Name: spaceCraft3
   m_TagString: Player
@@ -378,28 +377,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835faa4ff6c51874ba43005b761f8baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shit1: 1
-  shit2: 1
-  thrust: 64
-  turn: 10
-  invert: 0
   rearParticles:
   - {fileID: 198081485236090530}
   - {fileID: 198269472817258548}
   frontParticles:
   - {fileID: 198434890733126932}
   - {fileID: 198822681005078750}
---- !u!114 &114749764228001088
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1179818348844638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f483a2523872cd94e852fe34908e9bd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114760070513991062
 MonoBehaviour:
   m_ObjectHideFlags: 1

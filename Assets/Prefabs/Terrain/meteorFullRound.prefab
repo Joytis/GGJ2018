@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114314547773756328}
   - component: {fileID: 114995215453563556}
   - component: {fileID: 114957369424047010}
+  - component: {fileID: 114920732131198872}
   m_Layer: 10
   m_Name: meteorFullRound
   m_TagString: Untagged
@@ -193,6 +194,18 @@ MonoBehaviour:
   _particles:
   - {fileID: 198290857457944868}
   _soundIndex: 10
+--- !u!114 &114920732131198872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1091862510558982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f62e350d93de9449d672db733ac2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundIndeces: 0a0000000b0000000c000000
 --- !u!114 &114957369424047010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,7 +231,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198776430938867120}
-  _soundIndex: 10
 --- !u!135 &135399958968483878
 SphereCollider:
   m_ObjectHideFlags: 1
