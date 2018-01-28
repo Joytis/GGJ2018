@@ -914,7 +914,7 @@ Prefab:
     - target: {fileID: 224493328493272266, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -22.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224493328493272266, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -924,7 +924,7 @@ Prefab:
     - target: {fileID: 224493328493272266, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 45.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224100741501384992, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -944,7 +944,7 @@ Prefab:
     - target: {fileID: 224100741501384992, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -22.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224100741501384992, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -954,7 +954,7 @@ Prefab:
     - target: {fileID: 224100741501384992, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 45.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224797379754050148, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -974,7 +974,7 @@ Prefab:
     - target: {fileID: 224797379754050148, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -22.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224797379754050148, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
@@ -984,7 +984,7 @@ Prefab:
     - target: {fileID: 224797379754050148, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 45.4
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
