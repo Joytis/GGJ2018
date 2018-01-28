@@ -58,6 +58,7 @@ MonoBehaviour:
   - level2
   - level3
   - level4
+  - level5
 --- !u!114 &114815884512516820
 MonoBehaviour:
   m_ObjectHideFlags: 1
