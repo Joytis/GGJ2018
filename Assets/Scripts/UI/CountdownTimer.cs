@@ -32,6 +32,8 @@ public class CountdownTimer : MonoBehaviour {
 		currentTime = startTime;
 		_tex = GetComponent<TextMeshProUGUI>();
 		_gc = FindObjectOfType<GameController>() as GameController;
+
+		UpdateTime();
 	}
 	
 	// Update is called once per frame
