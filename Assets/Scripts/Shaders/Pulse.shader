@@ -1,35 +1,41 @@
-Shader "Custom/Pulse" {
-	Properties {
-		_MainTex ("Base (RGB)", 2D) = "white" {}
-		_GlowColor ("Glow Color", Color ) = ( 1.0, 1.0, 1.0, 1.0 )
-		_Frequency( "Glow Frequency", Float ) = 1.0
-		_MinPulseVal( "Minimum Glow Multiplier", Range( 0, 1 ) ) = 0.5
-	}
-	SubShader {
-		Tags { "RenderType"="Opaque" }
-		LOD 200
-		
-		CGPROGRAM
-		#pragma surface surf Lambert
-
-		sampler2D	_MainTex;
-		fixed4		_GlowColor;
-		half		_Frequency;
-		half		_MinPulseVal;
-
-		struct Input {
-			float2 uv_MainTex;
-		};
-
-		void surf (Input IN, inout SurfaceOutput o) 
-		{
-			half4 c = tex2D (_MainTex, IN.uv_MainTex);
-			half posSin = 0.5 * sin( _Frequency * _Time.x ) + 0.5;
-			half pulseMultiplier = posSin * ( 1 - _MinPulseVal ) + _MinPulseVal;
-			o.Albedo = c.rgb * _GlowColor.rgb * pulseMultiplier;
-			o.Alpha = c.a;
-		}
-		ENDCG
-	} 
-	FallBack "Diffuse"
+Shader "Custom/Pulse"
+{
+    Properties
+    {
+        _MainTex ("Base (RGBA)", 2D) = "white" {}
+        _FallOffTex ("FallOff (A)", 2D) = "white" {}
+    }
+    SubShader
+    {
+        Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
+        LOD 200
+       
+        CGPROGRAM
+        #pragma surface surf Lambert alpha
+        #pragma only_renderers d3d9 opengl
+ 
+        sampler2D _MainTex;
+        sampler2D _FallOffTex;
+ 
+        struct Input
+        {
+            float2 uv_MainTex;
+            float3 worldPos;
+        };
+ 
+        void surf (Input IN, inout SurfaceOutput o)
+        {
+            half4 c = tex2D (_MainTex, IN.uv_MainTex);
+            half fo = tex2D (_FallOffTex, IN.uv_MainTex).a;
+           
+            fixed illum = fo*((sin(IN.worldPos.x+_Time.g*5)+cos(IN.worldPos.z+_Time.g*5))/2+1)*3;//try use here some random value from vertex color
+            o.Emission = fixed3(0,0,1)*(illum+pow(illum, 4)*5);
+ 
+            o.Albedo = lerp(c.rgb, fixed3(0.25,0.25,1), illum);
+           
+            o.Alpha = c.a;
+        }
+        ENDCG
+    }
+    FallBack "Diffuse"
 }
