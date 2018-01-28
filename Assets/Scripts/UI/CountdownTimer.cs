@@ -76,7 +76,6 @@ public class CountdownTimer : MonoBehaviour {
 	}
 
 	public void ResetTimer() {
-		Debug.Log("StartTime: " + startTime);
 		currentTime = startTime;
 		UpdateTime();
 	}

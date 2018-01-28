@@ -56,7 +56,6 @@ public class GameController : MonoBehaviour {
 
 		// Grab the camera screen shake thing
 		//===============================================================
-		Debug.Log("Camera: " + _cameraShake);
 		var cams = Camera.allCameras;
 		foreach(var cam in cams) {
 			var cs = cam.GetComponent<CameraShake>();
@@ -234,7 +233,7 @@ public class GameController : MonoBehaviour {
 		UpdateCameraInfo();
 		UpdateReceiverHooks();
 
-		
+
 		if(scene.name == mainMenuName) {
 			maingui.SetActive(true);
 			gamegui.SetActive(false);

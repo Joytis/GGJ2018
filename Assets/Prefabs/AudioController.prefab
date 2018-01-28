@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4763113276906740}
   - component: {fileID: 82806577557098112}
   - component: {fileID: 114369500267168172}
+  - component: {fileID: 114586838597965188}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -49,10 +50,11 @@ AudioSource:
   m_GameObject: {fileID: 1356825142429462}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24301952, guid: 0ac7fb39e445048d89688f69c2a1839a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.936
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -132,4 +134,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068f0ebae5a6c5c4f9eb1e9d90a5378b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Clips: []
+  Clips:
+  - {fileID: 8300000, guid: bd5cb2614657a4a41972d21efc07eaaa, type: 3}
+  - {fileID: 8300000, guid: 58aff1fbcc8cc574f9b113beb2eb3eff, type: 3}
+  - {fileID: 8300000, guid: dc13feae3c65b014194de853ce321f6d, type: 3}
+  - {fileID: 8300000, guid: 73f4fbc90df02a34697fd7807f24aeb4, type: 3}
+  - {fileID: 8300000, guid: 2b3eccdb693f6cf419722320e56b7ffd, type: 3}
+  - {fileID: 8300000, guid: 7876dc692a208a545a78a79b3395bd03, type: 3}
+  - {fileID: 8300000, guid: 93e7b19019abf0d4ca7dde6390fb0ffb, type: 3}
+  - {fileID: 8300000, guid: 214a32d249c498741a7058072b563f43, type: 3}
+  - {fileID: 8300000, guid: c02b204f865740640b1965412e941223, type: 3}
+  - {fileID: 8300000, guid: ca347dcf43aa4704abfdf9d2d4198f49, type: 3}
+  - {fileID: 8300000, guid: 51f63cbc97f0f8e448e35f8cf28b47e1, type: 3}
+  - {fileID: 8300000, guid: 232c2c31fd585da4faa3cd0eb55f49c8, type: 3}
+  - {fileID: 8300000, guid: ab4a468f0aef6494591073f5c25bba91, type: 3}
+  - {fileID: 8300000, guid: a8308d9d49c5a3a4a82132a47c0d8e7d, type: 3}
+  - {fileID: 8300000, guid: 9d7ac0c686c96a94ca2debfb63484c1e, type: 3}
+  - {fileID: 8300000, guid: f69189ab07b83b841ade3d49db90a9fc, type: 3}
+  - {fileID: 8300000, guid: 9ce58a4cfe05f9448aee7f41a5cad01d, type: 3}
+  - {fileID: 8300000, guid: 06892c1075deaf541aa4f52b12e89d3e, type: 3}
+  - {fileID: 8300000, guid: 34ee67af9e83c854a9d5fede95085149, type: 3}
+--- !u!114 &114586838597965188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1356825142429462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16ce07724fd643c582fc68f916bd210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
