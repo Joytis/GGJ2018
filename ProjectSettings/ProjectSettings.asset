@@ -631,12 +631,13 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Build: 1
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: ed9034e7-054d-4d8b-b685-e3215b244ea2
-  projectName: GGJ2018 (1)
-  organizationId: particularly-spicy
+  cloudProjectId: fc552c9f-ac41-4ee7-9e52-8ae410e86e7c
+  projectName: GGJ2018
+  organizationId: spinning-chair-sudios
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
