@@ -4,18 +4,25 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float shit1 = 0.9f;
+    public float shit2 = 0.99f;
     public float thrust;
     public float turn;
     public bool invert;
     public ParticleSystem[] rearParticles;
     public ParticleSystem[] frontParticles;
-    bool _canBigThrust;
+    bool _isForward;
     float _maxTurn = 5f;
     float _rotation = 0f;
     GameObject _reflector;
     Rigidbody _rigidBody;
     Vector3 _direction = Vector3.zero;
     ForceMode _force = ForceMode.Force;
+
+    KeyCode _forward = KeyCode.UpArrow;
+    KeyCode _back = KeyCode.DownArrow;
+    KeyCode _left = KeyCode.LeftArrow;
+    KeyCode _right = KeyCode.RightArrow;
 
     #region MonoBehavoiur
     // Use this for initialization
@@ -26,17 +33,17 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
+        if (Input.GetKey(_right)) {
             _rotation += turn;
             _rotation = (_rotation > _maxTurn ? _maxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
-            _canBigThrust = true;
+            //_canBigThrust = true;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
+        else if (Input.GetKey(_left)) {
             _rotation -= turn;
             _rotation = (_rotation < -_maxTurn ? -_maxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
-            _canBigThrust = true;
+            //_canBigThrust = true;
         }
         else {
             _rotation = 0f;
@@ -44,6 +51,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) {
             DropReflector();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab)) {
+            if (_forward == KeyCode.UpArrow) {
+                _forward = KeyCode.W;
+                _back = KeyCode.S;
+                _left = KeyCode.A;
+                _right = KeyCode.D;
+            }
+            else {
+                _forward = KeyCode.UpArrow;
+                _back = KeyCode.DownArrow;
+                _left = KeyCode.LeftArrow;
+                _right = KeyCode.RightArrow;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) { _force = ForceMode.Force; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
@@ -54,31 +76,43 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate () {
         // Key input bindings
-        if (((Input.GetKeyDown(KeyCode.UpArrow) && !Input.GetKey(KeyCode.DownArrow)) || (Input.GetKeyDown(KeyCode.W) && !Input.GetKey(KeyCode.S))) && _canBigThrust) {
-            _direction = invert ? transform.forward : -transform.forward;
-            _rigidBody.AddForce(_direction * thrust * 2f, ForceMode.Impulse);
-            _canBigThrust = false;
-            StopAllCoroutines();
-            StartCoroutine(CoolDownForward());
-            if (invert) { PlayFrontParticles(); } else { PlayRearParticles(); }
-        }
-        else if (((Input.GetKeyDown(KeyCode.DownArrow) && !Input.GetKey(KeyCode.UpArrow)) || (Input.GetKeyDown(KeyCode.S) && !Input.GetKey(KeyCode.W))) && _canBigThrust) {
-            _direction = invert ? -transform.forward : transform.forward;
-            _rigidBody.AddForce(_direction * thrust * 2f, ForceMode.Impulse);
-            StopAllCoroutines();
-            StartCoroutine(CoolDownReverse());
-            if (invert) { PlayRearParticles(); } else { PlayFrontParticles(); }
-        }
+        //if (Input.GetKeyDown(_forward) && !Input.GetKey(_back) && _canBigThrust) {
+        //    _direction = invert ? transform.forward : -transform.forward;
+        //    _rigidBody.AddForce(_direction * thrust * 2f, ForceMode.Impulse);
+        //    _canBigThrust = false;
+        //    StopAllCoroutines();
+        //    StartCoroutine(CoolDownForward());
+        //    if (invert) { PlayFrontParticles(); } else { PlayRearParticles(); }
+        //}
+        //else if (Input.GetKeyDown(_back) && !Input.GetKey(_forward) && _canBigThrust) {
+        //    _direction = invert ? -transform.forward : transform.forward;
+        //    _rigidBody.AddForce(_direction * thrust * 2f, ForceMode.Impulse);
+        //    StopAllCoroutines();
+        //    StartCoroutine(CoolDownReverse());
+        //    if (invert) { PlayRearParticles(); } else { PlayFrontParticles(); }
+        //}
 
-        if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) {
+        if (Input.GetKey(_forward)) {
             _direction = invert ? transform.forward : -transform.forward;
-            _rigidBody.AddForce(_direction * thrust, _force);
+            _rigidBody.AddForce(_direction * thrust /* ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) ? 3f : 1f)*/, _force);
             if (invert) { PlayFrontParticles(); } else { PlayRearParticles(); }
+            _isForward = true;
         }
-        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S)) {
+        else if (Input.GetKey(_back)) {
             _direction = invert ? -transform.forward : transform.forward;
-            _rigidBody.AddForce(_direction * thrust, _force);
+            _rigidBody.AddForce(_direction * thrust /* ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) ? 3f : 1f)*/, _force);
             if (invert) { PlayRearParticles(); } else { PlayFrontParticles(); }
+            _isForward = false;
+        }
+        else {
+            if (_rigidBody.velocity.magnitude > 1f) {
+                Debug.Log(_rigidBody.velocity.magnitude);
+                _rigidBody.velocity *= ((_rigidBody.velocity.magnitude > 50f) && (_rigidBody.velocity.magnitude < 10f)) ? 0.25f : 0.975f;
+                if (_isForward && !invert) { PlayFrontParticles(); } else { PlayRearParticles(); }
+            }
+            else if (_rigidBody.velocity.magnitude > 0f) {
+                _rigidBody.velocity = Vector3.zero;
+            }
         }
 
         if (_rigidBody.angularVelocity.magnitude > 0.1) {
@@ -143,15 +177,15 @@ public class PlayerMovement : MonoBehaviour
     #endregion
 
     #region Private Methods
-    IEnumerator CoolDownForward () {
-        yield return new WaitForSeconds(2f);
-        _canBigThrust = true;
-    }
+    //IEnumerator CoolDownForward () {
+    //    yield return new WaitForSeconds(2f);
+    //    _canBigThrust = true;
+    //}
 
-    IEnumerator CoolDownReverse () {
-        yield return new WaitForSeconds(2f);
-        _canBigThrust = true;
-    }
+    //IEnumerator CoolDownReverse () {
+    //    yield return new WaitForSeconds(2f);
+    //    _canBigThrust = true;
+    //}
 
     void PlayRearParticles () {
         foreach (ParticleSystem p in rearParticles) {
