@@ -55,6 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNames:
   - baseScene
+  - level2
 --- !u!114 &114815884512516820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,6 +75,10 @@ MonoBehaviour:
   _pause: {fileID: 0}
   _cg: {fileID: 0}
   _cdt: {fileID: 0}
+  gameTopPanel: {fileID: 0}
+  gameResPanel: {fileID: 0}
+  gameWinText: {fileID: 0}
+  gameLoseText: {fileID: 0}
 --- !u!114 &114931199037447378
 MonoBehaviour:
   m_ObjectHideFlags: 1
