@@ -14,7 +14,6 @@ public class Receiver : MonoBehaviour {
 
 	void Update() {
 		if(triggered && (currentTime >= timeout)) {
-			Debug.Log("Do Anti Something");
 			internalAntiSomething();
 			triggered = false;
 		}
@@ -23,7 +22,6 @@ public class Receiver : MonoBehaviour {
 
 	public void DoThing() {
 		if(!triggered) {
-			Debug.Log("Do Something");
 			internalSomething(); // Dispatch delegate
 		}
 		triggered = true;

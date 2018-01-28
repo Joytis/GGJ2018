@@ -17,6 +17,12 @@ public class BaseManager : MonoBehaviour
         }
 
         Instance._remainingReflectors = Instance.NumberOfReflectors;
+
+        // Find the POllBaseFuckIt instance and set the base manager to this. 
+        var pbfi = FindObjectOfType<PollBaseFuckIt>();
+        if(pbfi) {
+            pbfi._bm = this;
+        }
     }
     #endregion
 

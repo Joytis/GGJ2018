@@ -28,6 +28,7 @@ public class SpaceCraftManager : MonoBehaviour
     float _mass = 1f;
     public SpaceCraft current;
     public GameObject[] spaceCrafts;
+    public int SoundIndex = 18;
     GameObject _spaceCraft = null;
     PlayerMovement _playerMovement = null;
 

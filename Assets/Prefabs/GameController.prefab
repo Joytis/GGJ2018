@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c69e50c75c2abcf429518c1f2a4e4a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuName: blankSceneDONOTTOUCH
   levelNames:
   - baseScene
   - level2
@@ -74,7 +75,7 @@ MonoBehaviour:
   maingui: {fileID: 0}
   gamegui: {fileID: 0}
   mainMenuName: MainMenuScene
-  gameSceneName: baseScene
+  blankSceneName: blankSceneDONOTTOUCH
   loseScreenName: 
   _pause: {fileID: 0}
   _cg: {fileID: 0}
@@ -83,6 +84,7 @@ MonoBehaviour:
   gameResPanel: {fileID: 0}
   gameWinText: {fileID: 0}
   gameLoseText: {fileID: 0}
+  mainMenuPanel: {fileID: 0}
   levelWinAudioIndex: 13
 --- !u!114 &114931199037447378
 MonoBehaviour:

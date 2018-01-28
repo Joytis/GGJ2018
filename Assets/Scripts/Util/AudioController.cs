@@ -14,6 +14,10 @@ public class AudioController : MonoBehaviour
         if (Instance == null) {
             Instance = this;
         }
+        else {
+            Destroy(gameObject);
+            return;
+        }
         Instance._audio = GetComponent<AudioSource>();
     }
 

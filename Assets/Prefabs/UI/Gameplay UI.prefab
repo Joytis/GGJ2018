@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 114370636657448376}
   - component: {fileID: 114844383473501118}
   - component: {fileID: 114588194635719834}
+  - component: {fileID: 114061250663651592}
   m_Layer: 5
   m_Name: Btn_PlayAgain
   m_TagString: Untagged
@@ -146,6 +147,7 @@ GameObject:
   - component: {fileID: 114103589830050300}
   - component: {fileID: 114846379790953314}
   - component: {fileID: 114420298314157106}
+  - component: {fileID: 114588494676182294}
   m_Layer: 5
   m_Name: Btn_Quit
   m_TagString: Untagged
@@ -252,6 +254,7 @@ GameObject:
   - component: {fileID: 114099779329267366}
   - component: {fileID: 225520885703416026}
   - component: {fileID: 114109913758479390}
+  - component: {fileID: 114948399437514532}
   m_Layer: 5
   m_Name: Gameplay UI
   m_TagString: Untagged
@@ -275,7 +278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1792419559105326
 GameObject:
   m_ObjectHideFlags: 1
@@ -293,6 +296,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114061250663651592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1167781814500462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814c3ce80a29f144f9bb13fde37d2d16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flexibleUIData: {fileID: 11400000, guid: 448a8bcccb6c4a9499413d47af705f17, type: 2}
 --- !u!114 &114099779329267366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1020,6 +1035,18 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &114588494676182294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234500329511364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a085c22128976a648af266750a438410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flexibleUIData: {fileID: 11400000, guid: 448a8bcccb6c4a9499413d47af705f17, type: 2}
 --- !u!114 &114641918011632590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1211,7 +1238,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114370636657448376}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: Reset____Everything______
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114846379790953314
@@ -1253,7 +1291,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114103589830050300}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: QuitInASecond
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114852340819944306
@@ -1509,6 +1558,17 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114948399437514532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742945303582974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7dbf147846dd44ab5f1ddb39cc2089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114990602697248434
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -596,7 +596,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &136237232
 Transform:
   m_ObjectHideFlags: 0
@@ -7842,6 +7842,52 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0893aa688c0bf2a428371dfeb39309cf, type: 3}
   m_PrefabInternal: {fileID: 1414686653}
+--- !u!1001 &1441324416
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4026199646419674, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -181.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026199646419674, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 41
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026199646419674, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 38.858
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026199646419674, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026199646419674, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026199646419674, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026199646419674, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4026199646419674, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444173215404054, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+      propertyPath: m_Name
+      value: balloonBoundery (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6d1c224deb5fd9e4087983b5388280c4, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1442659066
 Prefab:
   m_ObjectHideFlags: 0
