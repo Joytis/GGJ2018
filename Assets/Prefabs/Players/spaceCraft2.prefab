@@ -393,6 +393,7 @@ MonoBehaviour:
   frontParticles:
   - {fileID: 198024970492042730}
   - {fileID: 198933188144834136}
+  indexForPickupSound: 18
 --- !u!198 &198022167015214330
 ParticleSystem:
   m_ObjectHideFlags: 1

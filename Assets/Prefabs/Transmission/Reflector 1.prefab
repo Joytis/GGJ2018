@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496ac62f7ffb9c84780a6a5fc039e452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexForPickupSound: 18
 --- !u!114 &114307428080278810
 MonoBehaviour:
   m_ObjectHideFlags: 1

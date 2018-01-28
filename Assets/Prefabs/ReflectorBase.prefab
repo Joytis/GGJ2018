@@ -38,7 +38,6 @@ GameObject:
   - component: {fileID: 4782944544541906}
   - component: {fileID: 114146948460185974}
   - component: {fileID: 65196121529825144}
-  - component: {fileID: 114406785564190294}
   m_Layer: 0
   m_Name: ReflectorBase
   m_TagString: Base
@@ -92,6 +91,7 @@ GameObject:
   - component: {fileID: 23119928420765030}
   - component: {fileID: 65237421897272716}
   - component: {fileID: 65448128182454942}
+  - component: {fileID: 114667934493185838}
   m_Layer: 0
   m_Name: metalStructureCross
   m_TagString: Untagged
@@ -568,12 +568,12 @@ MonoBehaviour:
   NumberOfReflectors: 4
   ReflectorPrefab: {fileID: 1065175814945162, guid: f5d61547e35bd8641a16104c5f960063,
     type: 2}
---- !u!114 &114406785564190294
+--- !u!114 &114667934493185838
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1302389339105672}
+  m_GameObject: {fileID: 1885427899155982}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95f62e350d93de9449d672db733ac2ef, type: 3}
