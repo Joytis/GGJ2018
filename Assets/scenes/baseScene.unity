@@ -1382,7 +1382,7 @@ GameObject:
   - component: {fileID: 335316238}
   m_Layer: 0
   m_Name: playerStart
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
