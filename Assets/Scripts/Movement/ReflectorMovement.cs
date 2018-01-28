@@ -5,6 +5,7 @@ using UnityEngine;
 public class ReflectorMovement : MonoBehaviour
 {
     GameObject _spaceCraft;
+    ReflectorNode _node;
 
     #region MonoBehaviour
     // Use this for initialization
@@ -15,7 +16,8 @@ public class ReflectorMovement : MonoBehaviour
     // Update is called once per frame
     void Update () {
         if (_spaceCraft != null) {
-            transform.position = _spaceCraft.transform.position + (Vector3.back * 50f);
+            transform.position = _spaceCraft.transform.position + (_spaceCraft.transform.forward * 50f) + (_spaceCraft.transform.up * -13f);
+            transform.rotation = _spaceCraft.transform.rotation * Quaternion.Euler(0f,0f,90f);
         }
     }
     #endregion
@@ -23,9 +25,13 @@ public class ReflectorMovement : MonoBehaviour
     #region Public Methods
     public void SetSpaceCraft (GameObject go) {
         _spaceCraft = go;
+        transform.position = _spaceCraft.transform.position + (_spaceCraft.transform.forward * 50f) + (_spaceCraft.transform.up * -13f);
+        _node = GetComponent<ReflectorNode>();
+        _node.PickUpEnabled(false);
     }
 
     public void DestroySelf () {
+        _node.PickUpEnabled(true);
         Destroy(this);
         _spaceCraft = null;
     }

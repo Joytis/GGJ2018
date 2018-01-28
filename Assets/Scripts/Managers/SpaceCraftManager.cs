@@ -17,7 +17,8 @@ public class SpaceCraftManager : MonoBehaviour
     public SpaceCraft current;
     public GameObject[] SpaceCrafts;
     public Transform StartingPosition;
-    GameObject spaceCraft = null;
+    GameObject _spaceCraft = null;
+    PlayerMovement _playerMovement = null;
 
     #region MonoBehaviour
     void Awake () {
@@ -45,18 +46,23 @@ public class SpaceCraftManager : MonoBehaviour
         Quaternion rot = StartingPosition.rotation;
         GameObject reflector = null;
 
-        if (spaceCraft != null) {
-            pos = spaceCraft.transform.position;
-            rot = spaceCraft.transform.rotation;
-            vel = spaceCraft.GetComponent<Rigidbody>().velocity;
-            reflector = spaceCraft.GetComponent<PlayerMovement>().GetReflector();
-            DestroyImmediate(spaceCraft);
-            spaceCraft = null;
+        if (_spaceCraft != null) {
+            pos = _spaceCraft.transform.position;
+            rot = _spaceCraft.transform.rotation;
+            vel = _spaceCraft.GetComponent<Rigidbody>().velocity;
+            reflector = _spaceCraft.GetComponent<PlayerMovement>().GetReflector();
+            DestroyImmediate(_spaceCraft);
+            _spaceCraft = null;
+            _playerMovement = null;
         }
 
-        spaceCraft = Instantiate(SpaceCrafts[(int)current], pos, rot);
-        spaceCraft.GetComponent<Rigidbody>().velocity = vel;
-        spaceCraft.GetComponent<PlayerMovement>().SetReflector(reflector);
+        _spaceCraft = Instantiate(SpaceCrafts[(int)current], pos, rot);
+        _spaceCraft.GetComponent<Rigidbody>().velocity = vel;
+        _playerMovement = _spaceCraft.GetComponent<PlayerMovement>();
+        _playerMovement.SetReflector(reflector);
     }
+
+    public GameObject GetSpaceCraft { get { return Instance._spaceCraft; } }
+    public PlayerMovement GetPlayerMovement { get { return Instance._playerMovement; } }
     #endregion
 }
