@@ -17,9 +17,11 @@ public class TurnColorOnReceive : MonoBehaviour {
 		rec.RegisterDoSomething(new Receiver.DoSomething(TurnThingsColors));
 		rec.RegisterAntiSomething(new Receiver.DoSomething(TurnColorsBack));
 
-		foreach(var mesh in thingsToColor) 
-			foreach(var mat in mesh.materials) 
-				originalColors[mat] = mat.color;
+        foreach (var mesh in thingsToColor)
+            foreach (var mat in mesh.materials) {
+                if (!mat.HasProperty("_Color")) continue;
+                originalColors[mat] = mat.color;
+            }
 	}
 
 	void TurnThingsColors() {

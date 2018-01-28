@@ -46,7 +46,7 @@ public class ColorControllerUI : MonoBehaviour
     public void ClearPicker () {
         pickerBlocker.SetActive(false);
         picker.gameObject.SetActive(false);
-        picker.onValueChanged.RemoveAllListeners();
+        picker.onValueChanged.RemoveListener(UpdateColor);
         _currentImg = null;
     }
 
