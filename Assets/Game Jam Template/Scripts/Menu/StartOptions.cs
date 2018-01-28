@@ -50,7 +50,7 @@ public class StartOptions : MonoBehaviour {
 		}
 
 		//If changeScenes is true, start fading and change scenes halfway through animation when screen is blocked by FadeImage
-		if (menuSettingsData.nextSceneIndex != 0) 
+		if (menuSettingsData.nextSceneIndex != -1) 
 		{
 			//Use invoke to delay calling of LoadDelayed by half the length of fadeColorAnimationClip
 			Invoke ("LoadDelayed", menuSettingsData.menuFadeTime);
@@ -66,7 +66,18 @@ public class StartOptions : MonoBehaviour {
 			StartGameInScene();
 		}
 
-	}
+    }
+
+    public void CreditsButtonClicked () {
+        //If changeMusicOnStart is true, fade out volume of music group of AudioMixer by calling FadeDown function of PlayMusic
+        //To change fade time, change length of animation "FadeToColor"
+        if (menuSettingsData.musicLoopToChangeTo != null) {
+            playMusic.FadeDown(menuSettingsData.menuFadeTime);
+        }
+
+        StartCoroutine(FadeCanvasGroupAlpha(0f, 1f, fadeOutImageCanvasGroup));
+        Invoke ("StartGameInScene", menuSettingsData.menuFadeTime);
+    }
 
     void OnEnable()
     {

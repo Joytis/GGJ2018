@@ -97,7 +97,7 @@ public class PlayerControllerUI : MonoBehaviour
             case KeyCode.Z:
                 return 29;
             default:
-                return 0;
+                return -1;
         }
     }
 
@@ -178,6 +178,12 @@ public class PlayerControllerUI : MonoBehaviour
         left.value = KeyCodeCast(SpaceCraftManager.Instance.Left);
         right.value = KeyCodeCast(SpaceCraftManager.Instance.Right);
         craft.value = (int)SpaceCraftManager.Instance.current;
+
+        _forward = SpaceCraftManager.Instance.Forward;
+        _back = SpaceCraftManager.Instance.Back;
+        _left = SpaceCraftManager.Instance.Left;
+        _right = SpaceCraftManager.Instance.Right;
+        _craft = SpaceCraftManager.Instance.current;
     }
 
     public void UpdateThrust (float value) { thrust.text = string.Format("Thrust: {0:00}", value); _thrust = value; }

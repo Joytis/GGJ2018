@@ -211,7 +211,12 @@ public class GameController : MonoBehaviour {
 		}
 	}
 
-	public void Reset____Everything______() {
+    public void DoFUCKYEAHBOI () {
+        _levelSwapper.FuckIT();
+    }
+
+
+    public void Reset____Everything______() {
 		// HideResults();
 		// maingui.SetActive(true);
 		// gamegui.SetActive(false);

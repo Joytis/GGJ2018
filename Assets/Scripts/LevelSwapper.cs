@@ -27,6 +27,13 @@ public class LevelSwapper : MonoBehaviour {
     	else return false;
     }
 
+    public void FuckIT () {
+        if (HasNextLevel()) {
+            StartCoroutine(LoadNextSceneAsync(currentLevels[currentLevels.Count - 1]));
+            currentLevels.Clear();
+        }
+    }
+
     public void Poplevel() {
         currentLevels.RemoveAt(0);
     }
