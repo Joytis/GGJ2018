@@ -445,6 +445,7 @@ MonoBehaviour:
   frontParticles:
   - {fileID: 198434890733126932}
   - {fileID: 198822681005078750}
+  indexForPickupSound: 18
 --- !u!114 &114760070513991062
 MonoBehaviour:
   m_ObjectHideFlags: 1

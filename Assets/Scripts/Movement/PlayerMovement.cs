@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody _rigidBody;
     ForceMode _force = ForceMode.Force;
 
+    public int indexForPickupSound;
+
     #region MonoBehavoiur
     // Use this for initialization
     void Start () {
@@ -79,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerExit (Collider other) {
         if (other.CompareTag("Base") && _reflector == null) {
             BaseManager.Instance.SpawnReflector(this);
+            if (AudioController.Instance != null) { AudioController.Instance.PlayAudio(indexForPickupSound); }
         }
     }
     #endregion
