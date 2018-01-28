@@ -8,6 +8,7 @@ public class ShowPanels : MonoBehaviour {
 	public GameObject optionsTint;							//Store a reference to the Game Object OptionsTint 
 	public GameObject menuPanel;							//Store a reference to the Game Object MenuPanel 
 	public GameObject pausePanel;                           //Store a reference to the Game Object PausePanel 
+	public GameObject helpPanel;
 
     private GameObject activePanel;                         
     private MenuObject activePanelMenuObject;
@@ -37,13 +38,20 @@ public class ShowPanels : MonoBehaviour {
 		optionsPanel.SetActive(true);
 		optionsTint.SetActive(true);
         menuPanel.SetActive(false);
+        helpPanel.SetActive(false);
         SetSelection(optionsPanel);
 
     }
 
-    public void HideVingette() {
+	public void ShowHelpPanel() {
+        helpPanel.SetActive(true);
+        menuPanel.SetActive(false);
+	}
 
-    }
+	public void HideHelpPanel() {
+        helpPanel.SetActive(false);
+        menuPanel.SetActive(true);
+	}
 
 	//Call this function to deactivate and hide the Options panel during the main menu
 	public void HideOptionsPanel()
@@ -51,12 +59,14 @@ public class ShowPanels : MonoBehaviour {
         menuPanel.SetActive(true);
         optionsPanel.SetActive(false);
 		optionsTint.SetActive(false);
+        helpPanel.SetActive(false);
 	}
 
 	//Call this function to activate and display the main menu panel during the main menu
 	public void ShowMenu()
 	{
 		menuPanel.SetActive (true);
+        helpPanel.SetActive(false);
         SetSelection(menuPanel);
     }
 
