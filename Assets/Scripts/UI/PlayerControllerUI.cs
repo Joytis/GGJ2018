@@ -199,6 +199,6 @@ public class PlayerControllerUI : MonoBehaviour
         SpaceCraftManager.Instance.Back = _back;
         SpaceCraftManager.Instance.Left = _left;
         SpaceCraftManager.Instance.Right = _right;
-        SpaceCraftManager.Instance.current = _craft;
+        SpaceCraftManager.Instance.UpdateCraft(_craft);
     }
 }
