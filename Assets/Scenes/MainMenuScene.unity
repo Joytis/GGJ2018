@@ -197,11 +197,6 @@ Prefab:
       propertyPath: gameLoseText
       value: 
       objectReference: {fileID: 226053602}
-    - target: {fileID: 114815884512516820, guid: a71f203ec8483014890cb939215e4a4c,
-        type: 2}
-      propertyPath: levelWinAudioIndex
-      value: 13
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71f203ec8483014890cb939215e4a4c, type: 2}
   m_IsPrefabParent: 0
