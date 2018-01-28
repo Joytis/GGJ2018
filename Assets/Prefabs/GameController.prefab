@@ -57,6 +57,7 @@ MonoBehaviour:
   - baseScene
   - level2
   - level3
+  - level4
 --- !u!114 &114815884512516820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -80,6 +81,7 @@ MonoBehaviour:
   gameResPanel: {fileID: 0}
   gameWinText: {fileID: 0}
   gameLoseText: {fileID: 0}
+  levelWinAudioIndex: 13
 --- !u!114 &114931199037447378
 MonoBehaviour:
   m_ObjectHideFlags: 1
