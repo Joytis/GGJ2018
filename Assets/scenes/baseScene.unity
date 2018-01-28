@@ -8113,20 +8113,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 4193954997991506, guid: 7f92418effa3efb4ba481b26d1a9b788, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 89.702
-      objectReference: {fileID: 0}
-    - target: {fileID: 120283730371615924, guid: 7f92418effa3efb4ba481b26d1a9b788,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e66398ec4b317644eae7ce6f1706fac6, type: 2}
-    - target: {fileID: 120283730371615924, guid: 7f92418effa3efb4ba481b26d1a9b788,
-        type: 2}
-      propertyPath: m_Parameters.widthMultiplier
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7f92418effa3efb4ba481b26d1a9b788, type: 2}
   m_IsPrefabParent: 0

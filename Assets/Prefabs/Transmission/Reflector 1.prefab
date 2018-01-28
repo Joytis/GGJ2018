@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 114307428080278810}
   - component: {fileID: 114372755078968486}
   - component: {fileID: 114593666589492260}
+  - component: {fileID: 114686611626663754}
+  - component: {fileID: 114766642743438708}
   m_Layer: 8
   m_Name: Reflector 1
   m_TagString: Untagged
@@ -211,6 +213,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc09a930862d65948b433642785a65c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114686611626663754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065175814945162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f62e350d93de9449d672db733ac2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundIndeces: 0a0000000b0000000c000000
+--- !u!114 &114766642743438708
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065175814945162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013705c9a4dc78343bb70981a0d9d7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundIndeces: 0f000000
 --- !u!198 &198779752678905294
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114222895618635538}
   - component: {fileID: 114238130372973364}
   - component: {fileID: 114706405774355336}
+  - component: {fileID: 114666409299199820}
+  - component: {fileID: 114378945096930960}
   m_Layer: 9
   m_Name: FullReceiver
   m_TagString: Untagged
@@ -415,7 +417,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198833802239360398}
-  _soundIndex: 0
+--- !u!114 &114378945096930960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233041602909894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013705c9a4dc78343bb70981a0d9d7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundIndeces: 11000000
 --- !u!114 &114465682654985160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -439,7 +452,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3e1f0f6c204e740ae516969935d3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToWin: 3
+  timeToWin: 1.5
+--- !u!114 &114666409299199820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1233041602909894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f62e350d93de9449d672db733ac2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundIndeces: 0a0000000b0000000c000000
 --- !u!114 &114706405774355336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -453,7 +478,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198190499156657918}
-  _soundIndex: 0
 --- !u!135 &135313236677746562
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -526,7 +550,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -338347432
+  randomSeed: 1638825604
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3869,7 +3893,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1193880246
+  randomSeed: 473139125
   InitialModule:
     serializedVersion: 3
     enabled: 1

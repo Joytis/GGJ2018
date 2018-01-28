@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4782944544541906}
   - component: {fileID: 114146948460185974}
   - component: {fileID: 65196121529825144}
+  - component: {fileID: 114406785564190294}
   m_Layer: 0
   m_Name: ReflectorBase
   m_TagString: Base
@@ -249,7 +250,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1302389339105672}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -116.27, y: 70.278, z: -121.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4162740701719520}
@@ -567,3 +568,15 @@ MonoBehaviour:
   NumberOfReflectors: 4
   ReflectorPrefab: {fileID: 1065175814945162, guid: f5d61547e35bd8641a16104c5f960063,
     type: 2}
+--- !u!114 &114406785564190294
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1302389339105672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f62e350d93de9449d672db733ac2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundIndeces: 0e000000

@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour {
 	public GameObject gameResPanel;
 	public GameObject gameWinText;
 	public GameObject gameLoseText;
+	public int levelWinAudioIndex;
 
 
 	string currentScene;
@@ -148,6 +149,8 @@ public class GameController : MonoBehaviour {
 
 
 	public void FinishLevel() {
+		if (AudioController.Instance != null) { AudioController.Instance.PlayAudio(levelWinAudioIndex); }
+
 		if(_levelSwapper.HasNextLevel()) {
 			// Do next level stuff
 			_levelSwapper.StartNextLevel();

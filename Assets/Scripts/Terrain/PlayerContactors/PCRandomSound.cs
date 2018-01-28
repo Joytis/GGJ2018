@@ -12,7 +12,6 @@ public class PCRandomSound : MonoBehaviour, IPlayerContact {
 	}
 
 	public void DoShit(Collision collision) {
-
 		if(soundIndeces.Count > 0) {
 			var index = soundIndeces[Random.Range(0, soundIndeces.Count)];
 		

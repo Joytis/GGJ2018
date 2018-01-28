@@ -15,6 +15,6 @@ public class PlayerBumpNShake : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision coll) {
-		_gc.ApplyCameraShake(0.1f);
+		_gc.ApplyCameraShake(0.2f);
 	}
 }

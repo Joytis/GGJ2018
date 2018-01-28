@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114024579809502348}
   - component: {fileID: 114704191398578110}
   - component: {fileID: 54963012745272054}
+  - component: {fileID: 114040879615951144}
   m_Layer: 10
   m_Name: FullTransmitter
   m_TagString: Untagged
@@ -166,8 +167,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1028041965618084}
-  m_LocalRotation: {x: 0, y: 0.8216469, z: 0, w: 0.5699968}
-  m_LocalPosition: {x: -40.8, y: -7.7324, z: 6.5}
+  m_LocalRotation: {x: -0, y: 0.705266, z: -0, w: 0.70894283}
+  m_LocalPosition: {x: 12.420388, y: 0, z: -2.57158}
   m_LocalScale: {x: 3.5075915, y: 3.5075927, z: 3.5075927}
   m_Children:
   - {fileID: 4281803292473942}
@@ -175,7 +176,7 @@ Transform:
   - {fileID: 4326552089414672}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 110.5, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 89.702, z: 0}
 --- !u!4 &4235835400040616
 Transform:
   m_ObjectHideFlags: 1
@@ -414,6 +415,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198814848616518178}
+  _soundIndex: 0
+--- !u!114 &114040879615951144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1028041965618084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f62e350d93de9449d672db733ac2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundIndeces: 0a0000000b0000000c000000
 --- !u!114 &114617261636463554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -460,7 +474,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: df0665fb25fa0b148ab5fda04ba968f7, type: 2}
+  - {fileID: 2100000, guid: e66398ec4b317644eae7ce6f1706fac6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -485,7 +499,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 10
+    widthMultiplier: 5
     widthCurve:
       serializedVersion: 2
       m_Curve:

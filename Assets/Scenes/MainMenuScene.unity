@@ -207,6 +207,11 @@ Prefab:
       propertyPath: levelNames.Array.data[1]
       value: level2
       objectReference: {fileID: 0}
+    - target: {fileID: 114815884512516820, guid: a71f203ec8483014890cb939215e4a4c,
+        type: 2}
+      propertyPath: levelWinAudioIndex
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71f203ec8483014890cb939215e4a4c, type: 2}
   m_IsPrefabParent: 0
@@ -586,7 +591,7 @@ Prefab:
     - target: {fileID: 114369500267168172, guid: 9bfa407bc5b38d446a72390eb9c96b6a,
         type: 2}
       propertyPath: Clips.Array.size
-      value: 13
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4763113276906740, guid: 9bfa407bc5b38d446a72390eb9c96b6a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -649,7 +654,7 @@ Prefab:
         type: 2}
       propertyPath: Clips.Array.data[5]
       value: 
-      objectReference: {fileID: 8300000, guid: 7bb6f3f23b85d2d4e9299e3b69d85744, type: 3}
+      objectReference: {fileID: 8300000, guid: 7876dc692a208a545a78a79b3395bd03, type: 3}
     - target: {fileID: 114369500267168172, guid: 9bfa407bc5b38d446a72390eb9c96b6a,
         type: 2}
       propertyPath: Clips.Array.data[6]
@@ -696,6 +701,31 @@ Prefab:
       value: 
       objectReference: {fileID: 24301952, guid: 0ac7fb39e445048d89688f69c2a1839a,
         type: 2}
+    - target: {fileID: 114369500267168172, guid: 9bfa407bc5b38d446a72390eb9c96b6a,
+        type: 2}
+      propertyPath: Clips.Array.data[13]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8308d9d49c5a3a4a82132a47c0d8e7d, type: 3}
+    - target: {fileID: 114369500267168172, guid: 9bfa407bc5b38d446a72390eb9c96b6a,
+        type: 2}
+      propertyPath: Clips.Array.data[14]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d7ac0c686c96a94ca2debfb63484c1e, type: 3}
+    - target: {fileID: 114369500267168172, guid: 9bfa407bc5b38d446a72390eb9c96b6a,
+        type: 2}
+      propertyPath: Clips.Array.data[15]
+      value: 
+      objectReference: {fileID: 8300000, guid: f69189ab07b83b841ade3d49db90a9fc, type: 3}
+    - target: {fileID: 114369500267168172, guid: 9bfa407bc5b38d446a72390eb9c96b6a,
+        type: 2}
+      propertyPath: Clips.Array.data[16]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9ce58a4cfe05f9448aee7f41a5cad01d, type: 3}
+    - target: {fileID: 114369500267168172, guid: 9bfa407bc5b38d446a72390eb9c96b6a,
+        type: 2}
+      propertyPath: Clips.Array.data[17]
+      value: 
+      objectReference: {fileID: 8300000, guid: 06892c1075deaf541aa4f52b12e89d3e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bfa407bc5b38d446a72390eb9c96b6a, type: 2}
   m_IsPrefabParent: 0

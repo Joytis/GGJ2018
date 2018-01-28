@@ -9,13 +9,11 @@ public class BCRandomSound : MonoBehaviour, IBeamContact {
 
 	// Accept raycast hit for contact point. 
 	public void Activate(RaycastHit hit) {
-		// foreach(var p in _particles) {
-		// 	// Debug.Log("Activated for " + gameObject);
-		// 	Reposition(hit, p);
-		// 	p.Play();
-		// }
-
-		// if (AudioController.Instance != null) { AudioController.Instance.PlayAudio(_soundIndex); }
+		if(soundIndeces.Count > 0) {
+			var index = soundIndeces[Random.Range(0, soundIndeces.Count)];
+		
+			if (AudioController.Instance != null) { AudioController.Instance.PlayAudio(index); }
+		}
 	}
 
 	public void Deactivate() {

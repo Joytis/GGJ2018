@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 114447606419418744}
   - component: {fileID: 114235833305210216}
   - component: {fileID: 114517345046619662}
+  - component: {fileID: 114128817113326392}
   m_Layer: 10
   m_Name: meteorFull
   m_TagString: Untagged
@@ -180,6 +181,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1907630001206558}
   m_Mesh: {fileID: 4300000, guid: 9364ed54b3c3e804b8b474345be347aa, type: 3}
+--- !u!114 &114128817113326392
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1907630001206558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013705c9a4dc78343bb70981a0d9d7aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundIndeces: 10000000
 --- !u!114 &114232761428057136
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,7 +206,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198367717308164800}
-  _soundIndex: 10
 --- !u!114 &114235833305210216
 MonoBehaviour:
   m_ObjectHideFlags: 1
