@@ -26,13 +26,13 @@ public class PlayerMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.A)) {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
             _rotation += turn;
             _rotation = (_rotation > _maxTurn ? _maxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
             _canBigThrust = true;
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D)) {
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
             _rotation -= turn;
             _rotation = (_rotation < -_maxTurn ? -_maxTurn : _rotation);
             transform.Rotate(Vector3.up, _rotation);
@@ -128,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
     public void SetReflector (GameObject go) {
         _reflector = go;
         if (_reflector == null) { return; }
-        _reflector.GetComponent<ReflectorMovement>().SetSpaceCraft(this.gameObject);
+        _reflector.GetComponent<ReflectorMovement>().SetSpaceCraft(gameObject);
     }
 
     public GameObject GetReflector () {
