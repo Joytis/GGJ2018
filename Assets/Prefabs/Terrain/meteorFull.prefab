@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198367717308164800}
+  _soundIndex: 10
 --- !u!114 &114235833305210216
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198963778948684458}
+  _soundIndex: 10
 --- !u!135 &135921613137391076
 SphereCollider:
   m_ObjectHideFlags: 1
