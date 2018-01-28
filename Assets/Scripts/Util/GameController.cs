@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(LevelSwapper))]
 public class GameController : MonoBehaviour {
 
 	// Singleton GameObject, me. 
@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
 	public Pause _pause;
 	public CanvasGroup _cg; // fucking black-ass screen all up in my buziness dawg. Geezus. 
 	public CountdownTimer _cdt;
+	LevelSwapper _levelSwapper;
 
 	string currentScene;
 
@@ -39,6 +40,7 @@ public class GameController : MonoBehaviour {
 		// Grab the camera screen shake thing
 		//===============================================================
 		UpdateCameraInfo();
+		_levelSwapper = GetComponent<LevelSwapper>();
 	}
 
 	void UpdateCameraInfo() {
@@ -86,7 +88,7 @@ public class GameController : MonoBehaviour {
 	void Update() {
 		if(currentScene == mainMenuName) {}
 		// Check to see if game should be paused or unpaised. Woo!
-		else if(currentScene == gameSceneName) {
+		else if(_levelSwapper.Contains(SceneManager.GetActiveScene().name)) {
 			if(Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) {
 				switch(currentPauseState) {
 					case PauseState.Paused:
@@ -99,8 +101,12 @@ public class GameController : MonoBehaviour {
 			}
 		}
 		else if(currentScene == loseScreenName) {}
-		else {
-			Debug.LogError("Scene loaded with unrecognized name.");
+		// else {
+		// 	Debug.LogError("Scene loaded with unrecognized name.");
+		// }
+
+		if(Input.GetKeyDown(KeyCode.D)) {
+			FinishLevel();
 		}
 	}
 
@@ -135,7 +141,28 @@ public class GameController : MonoBehaviour {
 		Debug.Log("You Lose :c");
 	}
 
+	public void FinishLevel() {
+		if(!_levelSwapper.StartNextLevel()) {
+			LoadWinGame();
+		}
+	}
 
+	void LoadWinGame() {
+		// WIN THE GAME HERE.
+		//==================================================
+
+		//If we are running in a standalone build of the game
+	#if UNITY_STANDALONE
+		//Quit the application
+		Application.Quit();
+	#endif
+
+		//If we are running in the editor
+	#if UNITY_EDITOR
+		//Stop playing the scene
+		UnityEditor.EditorApplication.isPlaying = false;
+	#endif
+	}
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
 
@@ -147,7 +174,7 @@ public class GameController : MonoBehaviour {
 			maingui.SetActive(true);
 			gamegui.SetActive(false);
 		}
-		else if(scene.name == gameSceneName) {
+		else if(_levelSwapper.Contains(scene.name)) {
 			maingui.SetActive(false);
 			gamegui.SetActive(true);	
 			_cdt.StartTimer();

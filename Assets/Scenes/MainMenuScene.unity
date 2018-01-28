@@ -180,6 +180,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a71f203ec8483014890cb939215e4a4c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &27480651 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1982108283914582, guid: a71f203ec8483014890cb939215e4a4c,
+    type: 2}
+  m_PrefabInternal: {fileID: 27480650}
+--- !u!114 &27480652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 27480651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c69e50c75c2abcf429518c1f2a4e4a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelNames:
+  - baseScene
 --- !u!1 &113071216
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +492,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114932044779552798, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 22439792, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -670,6 +693,31 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114932044779552798, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932044779552798, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932044779552798, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 27480652}
+    - target: {fileID: 114932044779552798, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Poplevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114932044779552798, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
   m_IsPrefabParent: 0
@@ -684,6 +732,7 @@ GameObject:
   - component: {fileID: 822808773}
   - component: {fileID: 822808775}
   - component: {fileID: 822808774}
+  - component: {fileID: 822808776}
   m_Layer: 5
   m_Name: Counter_Text
   m_TagString: Untagged
@@ -831,6 +880,17 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 822808772}
+--- !u!114 &822808776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 822808772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4fbcd02d1cdbed439638263d17a461f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &903022812
 GameObject:
   m_ObjectHideFlags: 0

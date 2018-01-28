@@ -17,7 +17,7 @@ public class PCMakeParticles : MonoBehaviour, IPlayerContact {
 
 	void OnCollisionEnter(Collision collision) {
 		if(collision.collider.gameObject.layer == LayerMask.NameToLayer("Player")) {
-			Debug.Log("Collision with player");
+			// Debug.Log("Collision with player");
 			DoShit(collision);
 		}
 	}

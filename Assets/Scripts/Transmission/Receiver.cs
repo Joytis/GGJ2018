@@ -13,15 +13,17 @@ public class Receiver : MonoBehaviour {
 	float currentTime = 0f;
 
 	void Update() {
-		currentTime += Time.deltaTime;
-		if(triggered && currentTime >= timeout) {
+		if(triggered && (currentTime >= timeout)) {
+			Debug.Log("Do Anti Something");
 			internalAntiSomething();
 			triggered = false;
 		}
+		currentTime += Time.deltaTime;
 	}
 
 	public void DoThing() {
 		if(!triggered) {
+			Debug.Log("Do Something");
 			internalSomething(); // Dispatch delegate
 		}
 		triggered = true;

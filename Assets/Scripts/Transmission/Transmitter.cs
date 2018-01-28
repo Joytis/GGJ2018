@@ -72,7 +72,7 @@ public class Transmitter : MonoBehaviour {
 				if(bc != null) {
 					newContacts[bc] = hit; // Don't care if it's already there. C# has our back here. 
 				}
-		}
+			}
 			else {
 				newContacts[bc] = hit; // Don't care if it's already there. C# has our back here. 
 			}
@@ -92,35 +92,6 @@ public class Transmitter : MonoBehaviour {
 				rec.DoThing();
 				terminate = true;
 				break;
-			}
-
-			// SPECIAL CASE FOR PORTALS. Teleport the starting point somewhere else
-			//============================================
-			if(go.layer == LayerMask.NameToLayer("Portals")) {
-				// var firstNode = go.GetComponent<PortalNode>();
-				// var secondNode = firstNode._link;
-
-				// Debug.Log(firstNode);
-				// Debug.Log(secondNode);
-
-				// var position1 = firstNode.GetComponent<BoxCollider>().center + firstNode.transform.position;
-				// var position2 = secondNode.GetComponent<BoxCollider>().center + secondNode.transform.position;
-
-				// var distanceFromNode = position1 - hit.point;
-				// var outwardsDirection = Vector3.Reflect(direction * -1, hit.normal);
-				// var rotFromUp = Quaternion.LookRotation(outwardsDirection, firstNode.transform.up);
-				// var distanceMag = distanceFromNode.magnitude;
-
-				// Debug.Log(distanceMag);
-
-				// var newDirection = rotFromUp * secondNode.transform.up;
-				// var newPoint = position2;
-				// positions.Add(startPosition);
-
-				// Debug.Log(newDirection);
-				// Debug.Log(newPoint);
-				// direction = secondNode.transform.up;
-				// startPosition = newPoint;
 			}
 
 		}
