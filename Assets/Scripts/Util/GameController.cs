@@ -39,6 +39,4 @@ public class GameController : MonoBehaviour {
 			cam.AddTrauma(amount);
 	}
 
-
-	
 }
