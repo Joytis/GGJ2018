@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114201109906166728}
   - component: {fileID: 114307428080278810}
   - component: {fileID: 114372755078968486}
+  - component: {fileID: 114593666589492260}
   m_Layer: 8
   m_Name: Reflector 1
   m_TagString: Untagged
@@ -199,6 +200,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles:
   - {fileID: 198848224979693278}
+--- !u!114 &114593666589492260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1065175814945162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc09a930862d65948b433642785a65c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198779752678905294
 ParticleSystem:
   m_ObjectHideFlags: 1
