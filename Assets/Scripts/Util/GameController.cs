@@ -126,7 +126,7 @@ public class GameController : MonoBehaviour {
 			currentPauseState = PauseState.Paused;
 		}
 	}
-	void Unpause() { 
+	public void Unpause() { 
 		if(_pause) {
 			//maingui.SetActive(false);
 			_pause.UnPause(); 
