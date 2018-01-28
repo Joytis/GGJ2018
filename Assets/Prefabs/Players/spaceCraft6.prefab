@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 54556735143387988}
   - component: {fileID: 114955825929608088}
   - component: {fileID: 114564895862103492}
+  - component: {fileID: 114243510020835024}
   m_Layer: 11
   m_Name: spaceCraft6
   m_TagString: Player
@@ -366,6 +367,17 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 805806cf02dcc0c449fac0df9292e8a0, type: 3}
+--- !u!114 &114243510020835024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1214557986360398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f483a2523872cd94e852fe34908e9bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114564895862103492
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -9,7 +9,8 @@ using TMPro;
 public class CountdownTimer : MonoBehaviour {
 
 	public float startTime = 60f; // in seconds. 
-	public Receiver _recv; // We'll register a callback with this thing to stop the timer!
+	// public Receiver _recv; // We'll register a callback with this thing to stop the timer!
+	GameController _gc;
 
 	float currentTime;
 
@@ -21,7 +22,7 @@ public class CountdownTimer : MonoBehaviour {
 		Ticking,
 		NotTicking
 	};
-	State currentState = State.Ticking;
+	State currentState = State.NotTicking;
 	TextMeshProUGUI _tex;
 
 	// Use this for initialization
@@ -30,8 +31,7 @@ public class CountdownTimer : MonoBehaviour {
 
 		currentTime = startTime;
 		_tex = GetComponent<TextMeshProUGUI>();
-		_recv.RegisterDoSomething(new Receiver.DoSomething(StopTimer));
-		_recv.RegisterAntiSomething(new Receiver.DoSomething(StartTimer));
+		_gc = FindObjectOfType<GameController>() as GameController;
 	}
 	
 	// Update is called once per frame
@@ -40,7 +40,8 @@ public class CountdownTimer : MonoBehaviour {
 			case State.Ticking:
 				if(currentTime < 0)  {
 					// Do some bad shit.
-					currentState = State.NotTicking; 	
+					currentState = State.NotTicking; 
+					_gc.LoseTheGame();
 					break; // don't decrement out of FEAR. 
 				}
 				currentTime -= Time.deltaTime;
@@ -58,13 +59,18 @@ public class CountdownTimer : MonoBehaviour {
 		miliseconds = Mathf.FloorToInt((currentTime * 1000) % 1000);
 		if(miliseconds < 0) miliseconds = 0;
 
-		_tex.text = String.Format("{0}:{1:00}.{2:000}", minutes, seconds, miliseconds);
+		_tex.text = String.Format("{0:00}", seconds);
 	}
 
-	void StopTimer() {
+	public void StopTimer() {
 		currentState = State.NotTicking; 	
 	}
-	void StartTimer() {
+	public void StartTimer() {
 		currentState = State.Ticking; 	
+	}
+
+	public void ResetTimer() {
+		Debug.Log("StartTime: " + startTime);
+		currentTime = startTime;
 	}
 }

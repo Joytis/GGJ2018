@@ -41,6 +41,10 @@ public class ShowPanels : MonoBehaviour {
 
     }
 
+    public void HideVingette() {
+
+    }
+
 	//Call this function to deactivate and hide the Options panel during the main menu
 	public void HideOptionsPanel()
 	{
