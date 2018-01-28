@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
 
 	// Singleton GameObject, me. 
 	public static GameController single = null;
-	public GameObject maingui;
+	//public GameObject maingui;
 	public GameObject gamegui;
 	public string mainMenuName;
 	public string blankSceneName;
@@ -79,7 +79,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	void Start() {
-		maingui.SetActive(true);
+		//maingui.SetActive(true);
 		gamegui.SetActive(false);
 	}
 
@@ -121,14 +121,14 @@ public class GameController : MonoBehaviour {
 
 	void Pause() { 
 		if(_pause) {
-			maingui.SetActive(true);
+			//maingui.SetActive(true);
 			_pause.DoPause(); 
 			currentPauseState = PauseState.Paused;
 		}
 	}
 	void Unpause() { 
 		if(_pause) {
-			maingui.SetActive(false);
+			//maingui.SetActive(false);
 			_pause.UnPause(); 
 			currentPauseState = PauseState.Unpaused;
 		}
@@ -235,11 +235,11 @@ public class GameController : MonoBehaviour {
 
 
 		if(scene.name == mainMenuName) {
-			maingui.SetActive(true);
+			//maingui.SetActive(true);
 			gamegui.SetActive(false);
 		}
 		else if(_levelSwapper.Contains(scene.name)) {
-			maingui.SetActive(false);
+			//maingui.SetActive(false);
 			gamegui.SetActive(true);	
 			_cdt.StartTimer();
 		}
@@ -247,10 +247,10 @@ public class GameController : MonoBehaviour {
 			HideResults();
 			gamegui.SetActive(false);	
 			mainMenuPanel.SetActive(true);
-			maingui.SetActive(true);
+			//maingui.SetActive(true);
 		}
 		else if(scene.name == loseScreenName) {
-			maingui.SetActive(false);
+			//maingui.SetActive(false);
 			gamegui.SetActive(false);
 		}
 		else {
