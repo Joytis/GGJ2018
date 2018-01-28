@@ -34,6 +34,7 @@ public class ReflectorMovement : MonoBehaviour
         _node.PickUpEnabled(true);
         Destroy(this);
         _spaceCraft = null;
+        transform.rotation = Quaternion.Euler(0f, transform.rotation.eulerAngles.y, 90f);
     }
     #endregion
 }

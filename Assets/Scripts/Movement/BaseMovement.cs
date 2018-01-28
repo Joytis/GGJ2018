@@ -6,7 +6,7 @@ public class BaseMovement : MonoBehaviour
 {
     public float thrust;
     public float turn;
-    public Rigidbody shit;
+    //public Rigidbody shit;
     float _maxTurn = 5f;
     float _rotation = 0f;
     Rigidbody _rigidBody;
@@ -36,7 +36,7 @@ public class BaseMovement : MonoBehaviour
             _rotation = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space)) { _direction = shit.velocity = shit.angularVelocity = _rigidBody.velocity = _rigidBody.angularVelocity = transform.position = Vector3.zero; }
+        if (Input.GetKeyDown(KeyCode.Space)) { _direction = /*shit.velocity = shit.angularVelocity =*/ _rigidBody.velocity = _rigidBody.angularVelocity = transform.position = Vector3.zero; }
 
         if (Input.GetKeyDown(KeyCode.Alpha1)) { _force = ForceMode.Force; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
         if (Input.GetKeyDown(KeyCode.Alpha2)) { _force = ForceMode.Acceleration; _direction = _rigidBody.velocity = transform.position = Vector3.zero; }
@@ -61,7 +61,7 @@ public class BaseMovement : MonoBehaviour
         else if (_rigidBody.angularVelocity.magnitude > 0) {
             _rigidBody.angularVelocity = Vector3.zero;
         }
-        shit.velocity = shit.angularVelocity = Vector3.zero;
+        //shit.velocity = shit.angularVelocity = Vector3.zero;
     }
     #endregion
 }
