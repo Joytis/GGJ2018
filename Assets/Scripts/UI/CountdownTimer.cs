@@ -26,7 +26,7 @@ public class CountdownTimer : MonoBehaviour {
 	TextMeshProUGUI _tex;
 
 	// Use this for initialization
-	void Start() {
+	void Awake() {
 		// _tex.color = Color.red;
 
 		currentTime = startTime;
@@ -51,15 +51,19 @@ public class CountdownTimer : MonoBehaviour {
 				break;
 		}
 
+		UpdateTime();
+	}
+
+	void UpdateTime() {
 		// Translate time to text. 
 		minutes = Mathf.FloorToInt(currentTime / 60f);
 		if(minutes < 0) minutes = 0;
 		seconds = Mathf.FloorToInt(currentTime % 60f);
 		if(seconds < 0) seconds = 0;
-		miliseconds = Mathf.FloorToInt((currentTime * 1000) % 1000);
+		miliseconds = Mathf.FloorToInt((currentTime * 1000) % 1000) / 10;
 		if(miliseconds < 0) miliseconds = 0;
 
-		_tex.text = String.Format("{0:00}", seconds);
+		_tex.text = String.Format("{0:00}.{1:00}", seconds, miliseconds);
 	}
 
 	public void StopTimer() {
@@ -72,5 +76,6 @@ public class CountdownTimer : MonoBehaviour {
 	public void ResetTimer() {
 		Debug.Log("StartTime: " + startTime);
 		currentTime = startTime;
+		UpdateTime();
 	}
 }
