@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class PCMakeParticles : MonoBehaviour, IPlayerContact {
 
 	public List<ParticleSystem> _particles;
-	public UnityEvent Sound;
+	public int _soundIndex;
 
 	void Awake() {
 		// Force the particle systems to NOT loop!
@@ -30,7 +30,7 @@ public class PCMakeParticles : MonoBehaviour, IPlayerContact {
 			p.Play();
 		}
 
-		if (Sound != null) { Sound.Invoke(); }
+		if (AudioController.Instance != null) { AudioController.Instance.PlayAudio(_soundIndex); }
 	}
 
 	// move the particle effects to be 
