@@ -394,7 +394,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -126989408
+  randomSeed: 1937653612
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -522,8 +522,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 1
+      scalar: 2
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3725,7 +3725,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -156453037
+  randomSeed: 8277393
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3853,8 +3853,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 1
+      scalar: 2
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -7056,7 +7056,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 51841285
+  randomSeed: -1461506770
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -10399,7 +10399,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1389454849
+  randomSeed: -1320838419
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -13742,7 +13742,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1098766136
+  randomSeed: 867991117
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17085,7 +17085,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -746686731
+  randomSeed: -1504719089
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -17213,8 +17213,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
-      minScalar: 1
+      scalar: 2
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
