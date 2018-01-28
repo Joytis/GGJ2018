@@ -7,17 +7,15 @@ using TMPro;
 public class PollBaseFuckIt : MonoBehaviour {
 
 	public BaseManager _bm;
-	TextMeshProUGUI _tmp;
-
-	void OnSceneLoaded() {
-		// _bm = FindObjectOfType<BaseManager>();
-		_tmp = GetComponent<TextMeshProUGUI>();
-	}
+	public TextMeshProUGUI _tmp;
 	
 	// Update is called once per frame
 	void Update () {	
-		if(_bm && gameObject.activeSelf) {
+		_bm = BaseManager.Instance;
+		// _tmp = GetComponent<TextMeshProUGUI>();
+		if(_bm != null) {
 			Debug.Log("Base manager Exists");
+			Debug.Log(_bm.GetNumReflectorsLeft().ToString());
 			_tmp.text = _bm.GetNumReflectorsLeft().ToString();
 		}	
 	}
