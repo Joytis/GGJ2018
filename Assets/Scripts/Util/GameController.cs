@@ -10,7 +10,8 @@ public class GameController : MonoBehaviour {
 	public GameObject maingui;
 	public GameObject gamegui;
 	public string mainMenuName;
-	public string gameSceneName;
+	public string blankSceneName;
+	// public string gameSceneName;
 	public string loseScreenName;
 	public Pause _pause;
 	public CanvasGroup _cg; // fucking black-ass screen all up in my buziness dawg. Geezus. 
@@ -20,6 +21,7 @@ public class GameController : MonoBehaviour {
 	public GameObject gameResPanel;
 	public GameObject gameWinText;
 	public GameObject gameLoseText;
+	public GameObject mainMenuPanel;
 	public int levelWinAudioIndex;
 
 
@@ -54,7 +56,6 @@ public class GameController : MonoBehaviour {
 
 		// Grab the camera screen shake thing
 		//===============================================================
-		Debug.Log("Camera: " + _cameraShake);
 		var cams = Camera.allCameras;
 		foreach(var cam in cams) {
 			var cs = cam.GetComponent<CameraShake>();
@@ -111,9 +112,11 @@ public class GameController : MonoBehaviour {
 		// 	Debug.LogError("Scene loaded with unrecognized name.");
 		// }
 
-		if(Input.GetKeyDown(KeyCode.D)) {
-			FinishLevel();
-		}
+		#if UNITY_EDITOR
+			if(Input.GetKeyDown(KeyCode.Q)) {
+				FinishLevel();
+			}
+		#endif
 	}
 
 	void Pause() { 
@@ -209,13 +212,26 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void Reset____Everything______() {
-
+		// HideResults();
+		// maingui.SetActive(true);
+		// gamegui.SetActive(false);
+		_levelSwapper.Reset();
+		_levelSwapper.LoadMainMenu();
 	}
 
 	void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
 
 		_cdt.ResetTimer();
 		_cdt.StopTimer();
+
+
+
+		_cg.alpha = 0;
+		currentScene = scene.name;
+		currentPauseState = PauseState.Unpaused;
+		Unpause();
+		UpdateCameraInfo();
+		UpdateReceiverHooks();
 
 
 		if(scene.name == mainMenuName) {
@@ -227,6 +243,12 @@ public class GameController : MonoBehaviour {
 			gamegui.SetActive(true);	
 			_cdt.StartTimer();
 		}
+		else if(scene.name == blankSceneName) {
+			HideResults();
+			gamegui.SetActive(false);	
+			mainMenuPanel.SetActive(true);
+			maingui.SetActive(true);
+		}
 		else if(scene.name == loseScreenName) {
 			maingui.SetActive(false);
 			gamegui.SetActive(false);
@@ -234,14 +256,6 @@ public class GameController : MonoBehaviour {
 		else {
 			Debug.LogError("Scene loaded with unrecognized name.");
 		}
-
-		_cg.alpha = 0;
-		currentScene = scene.name;
-		currentPauseState = PauseState.Unpaused;
-		Unpause();
-		UpdateCameraInfo();
-		UpdateReceiverHooks();
-		
 	}
 
 }

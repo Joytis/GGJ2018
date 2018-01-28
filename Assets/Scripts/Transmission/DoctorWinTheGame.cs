@@ -30,7 +30,6 @@ public class DoctorWinTheGame : MonoBehaviour {
 			case State.Charging: 
 				currentTime += Time.deltaTime;
 				if(currentTime > timeToWin) {
-					Debug.Log("HEY LOOK WE WON!");
 					FindObjectOfType<GameController>().FinishLevel();
 					gameObject.SetActive(false); // Don't do more shit plz. s
 				}

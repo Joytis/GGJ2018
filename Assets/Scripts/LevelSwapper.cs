@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class LevelSwapper : MonoBehaviour {
 
+    public string mainMenuName;
 	public List<string> levelNames;
 	List<string> currentLevels;
 
@@ -19,7 +20,8 @@ public class LevelSwapper : MonoBehaviour {
 
     public bool StartNextLevel() {
     	if(currentLevels.Count > 0) {
-            StartCoroutine(LoadNextSceneAsync());
+            StartCoroutine(LoadNextSceneAsync(currentLevels[0]));
+            currentLevels.RemoveAt(0);
             return true;
     	}
     	else return false;
@@ -27,6 +29,10 @@ public class LevelSwapper : MonoBehaviour {
 
     public void Poplevel() {
         currentLevels.RemoveAt(0);
+    }
+
+    public void LoadMainMenu() {
+        StartCoroutine(LoadNextSceneAsync(mainMenuName));
     }
 
     public bool Contains(string level) {
@@ -37,11 +43,10 @@ public class LevelSwapper : MonoBehaviour {
     	currentLevels = levelNames.ToList();
     }
 
-    IEnumerator LoadNextSceneAsync() {
+    IEnumerator LoadNextSceneAsync(string lev) {
         // The Application loads the Scene in the background at the same time as the current Scene.
         //This is particularly good for creating loading screens. You could also load the Scene by build //number.
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(currentLevels[0]);
-        currentLevels.RemoveAt(0);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(lev);
 
         //Wait until the last operation fully loads to return anything
         while (!asyncLoad.isDone) { yield return null; }
