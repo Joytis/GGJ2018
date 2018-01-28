@@ -32,6 +32,7 @@ public class DoctorWinTheGame : MonoBehaviour {
 				if(currentTime > timeToWin) {
 					Debug.Log("HEY LOOK WE WON!");
 					FindObjectOfType<GameController>().FinishLevel();
+					gameObject.SetActive(false); // Don't do more shit plz. s
 				}
 				break;
 			case State.Not: 

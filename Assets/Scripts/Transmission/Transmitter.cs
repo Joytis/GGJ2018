@@ -66,15 +66,10 @@ public class Transmitter : MonoBehaviour {
 			// Basic Beam Contact checker. 
 			//=============================================
 			// Check if we have a beam Contact on the thing. If we do, sick!
-			var bc = go.GetComponent<IBeamContact>();
-			if(bc == null) {
-				bc = go.GetComponentInParent<IBeamContact>();
-				if(bc != null) {
-					newContacts[bc] = hit; // Don't care if it's already there. C# has our back here. 
-				}
-			}
-			else {
-				newContacts[bc] = hit; // Don't care if it's already there. C# has our back here. 
+			var bc = go.GetComponents<IBeamContact>().ToList();
+			bc.AddRange(go.GetComponentsInParent<IBeamContact>().ToList());
+			foreach(var b in bc) {
+				newContacts[b] = hit; // Don't care if it's already there. C# has our back here. 	
 			}
 
 			// DON"T DO ANTHING MORE IF OBSTRUCTABLE
@@ -89,7 +84,9 @@ public class Transmitter : MonoBehaviour {
 				if(rec == null) {
 					rec = go.GetComponentInChildren<Receiver>();
 				}
-				rec.DoThing();
+				if(rec != null) {
+					rec.DoThing();
+				}
 				terminate = true;
 				break;
 			}
