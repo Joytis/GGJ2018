@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PCMakeParticles : MonoBehaviour, IPlayerContact {
 
 	public List<ParticleSystem> _particles;
+	public UnityEvent Sound;
 
 	void Awake() {
 		// Force the particle systems to NOT loop!
@@ -27,6 +29,8 @@ public class PCMakeParticles : MonoBehaviour, IPlayerContact {
 			Reposition(collision, p);
 			p.Play();
 		}
+
+		if (Sound != null) { Sound.Invoke(); }
 	}
 
 	// move the particle effects to be 

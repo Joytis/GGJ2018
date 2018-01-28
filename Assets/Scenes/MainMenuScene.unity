@@ -569,6 +569,56 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114981191198420028, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114981191198420028, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114118775182733386, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114118775182733386, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176415581567020, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114176415581567020, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114130288318657774, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114130288318657774, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114329809418052124, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114329809418052124, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 198714, guid: 45616935e4fe10f48b62da1347801a16, type: 2}
       propertyPath: m_Name
       value: GameplayMenuUI
@@ -593,12 +643,22 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114324983274927212, guid: 45616935e4fe10f48b62da1347801a16,
+    - target: {fileID: 114606269103621660, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114324983274927212, guid: 45616935e4fe10f48b62da1347801a16,
+    - target: {fileID: 114606269103621660, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270876834340186, guid: 45616935e4fe10f48b62da1347801a16,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270876834340186, guid: 45616935e4fe10f48b62da1347801a16,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
